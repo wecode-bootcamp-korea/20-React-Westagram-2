@@ -1,9 +1,19 @@
+$darkBlueColor: #114271;
+$greyColor: #fafafa;
+$whiteColor: white;
+$lightGreyColor: rgba(0, 0, 0, 0.2);
+$loginBoxColor: #ffffff;
+$loginFormColor: rgba(197, 225, 251, 0.7);
+$loginBoxBorder: 1px solid rgba(0, 0, 0, 0.2);
+$inputBorder: 1px solid rgba(0, 0, 0, 0.1);
+$greyBorder: rgba(0, 0, 0, 0.2);
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: var(--greyColor);
+  background-color: $greyColor;
 }
 
 .mainLogin {
@@ -15,8 +25,8 @@ body {
 .loginBox {
   height: 380px;
   width: 350px;
-  background-color: var(--loginBoxColor);
-  border: var(--loginBoxBorder);
+  background-color: $loginBoxColor;
+  border: $loginBoxBorder;
   border-radius: 1px;
 }
 
@@ -33,24 +43,25 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0px 50px;
-  color: rgba(0, 0, 0, 0.2);
+  color: $lightGreyColor;
   input {
     display: flex;
     padding: 12px 10px;
     margin-bottom: 10px;
-    border: var(--inputBorder);
+    border: $inputBorder;
     border-radius: 2px;
-    background-color: var(--greyColor);
-    color: var(--greyBorder);
+    background-color: $greyColor;
+    color: $greyBorder;
   }
   button {
     padding: 12px 5px;
     width: 100%;
     margin-top: 10px;
-    margin-bottom: 70px;
-    color: var(--whiteColor);
+    margin-bottom: 50px;
+    color: $whiteColor;
     border-radius: 3px;
-    background-color: var(--loginFormColor);
+    border: none;
+    background-color: $loginFormColor;
     font-weight: bold;
   }
 }
