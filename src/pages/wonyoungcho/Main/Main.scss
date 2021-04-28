@@ -1,0 +1,274 @@
+@import url('https://use.fontawesome.com/releases/v5.15.3/css/all.css');
+
+$whiteColor: white;
+$inputBorder: 1px solid rgba(0, 0, 0, 0.1);
+$greyBorder: rgba(0, 0, 0, 0.2);
+
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 20px 50px;
+  background-color: $whiteColor;
+}
+
+.navBarLeft {
+  display: flex;
+  align-items: center;
+  margin-left: 200px;
+  a {
+    color: black;
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+    text-decoration: none;
+  }
+}
+
+.navBarSearch {
+  display: flex;
+  align-items: center;
+  position: relative;
+  input {
+    padding: 6px 35px;
+    text-align: center;
+    border-radius: 5px;
+    border: $inputBorder;
+  }
+  i {
+    position: absolute;
+    color: $greyBorder;
+    margin-left: 80px;
+  }
+}
+
+.navBarRight {
+  display: flex;
+  align-items: center;
+  margin-right: 200px;
+  ul {
+    display: flex;
+    align-items: center;
+  }
+  li {
+    margin: 0px 10px;
+  }
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  height: 75%;
+  width: 100%;
+  background-color: var(--greyColor);
+}
+
+.feeds {
+  width: 620px;
+  margin-right: 50px;
+}
+
+.post {
+  width: 100%;
+  margin-bottom: 55px;
+  background-color: var(--whiteColor);
+  border: 1px solid var(--greyBorder);
+  border-radius: 2px;
+}
+
+.postHeader {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 10px;
+  img {
+    display: flex;
+    align-items: center;
+    width: 30px;
+    margin-left: 5px;
+    border: 1px solid var(--greyBorder);
+    border-radius: 70%;
+  }
+}
+
+.user {
+  display: flex;
+}
+
+.userName {
+  display: flex;
+  a {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+.more {
+  display: flex;
+  i {
+    display: flex;
+    align-items: center;
+    margin-left: 400px;
+  }
+}
+
+.postMainImage img {
+  display: flex;
+  height: 430px;
+  width: 100%;
+}
+
+.postIcons {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px;
+}
+
+.postIconsLeft {
+  display: flex;
+  i {
+    display: flex;
+    margin: 0px 5px;
+  }
+}
+
+.postIconsRight {
+  display: flex;
+  i {
+    margin-right: 11px;
+  }
+}
+
+.postLikes {
+  display: flex;
+  padding: 6px 12px;
+}
+
+.postLikesCount {
+  font-weight: bold;
+}
+
+.postUser {
+  padding: 6px 12px;
+}
+
+.postUserId {
+  font-weight: bold;
+}
+
+.postTime {
+  display: flex;
+  padding: 6px 12px;
+}
+
+.postTimePeriod {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.comments {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 12px 12px;
+  border-top: 1px solid var(--greyBorder);
+}
+
+.commentsIcon i {
+  display: flex;
+  align-items: center;
+}
+
+.commentsInput textarea {
+  height: 20px;
+  width: 530px;
+  padding-left: 20px;
+  background-color: transparent;
+  color: var(--whiteColor);
+  border: 0px solid;
+  resize: none;
+}
+
+.commentsPost button {
+  padding: 0px;
+  background: none;
+  border: none;
+  color: var(--postBtnColor);
+}
+
+.userInfo {
+  display: flex;
+}
+
+.userInfoImage img {
+  border-radius: 70%;
+  width: 55px;
+}
+
+.userInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15px;
+}
+
+.userInfoId a {
+  font-weight: bold;
+}
+
+.userInfoName a {
+  color: var(--userInfoColor);
+}
+
+.suggestionHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px 10px 0px;
+  a {
+    font-size: 14px;
+  }
+}
+
+.suggestionHeaderTag {
+  color: #949494;
+  font-size: 14px;
+}
+
+.suggestionList {
+  flex-direction: column;
+}
+
+.suggestionListContainer {
+  display: flex;
+}
+
+.suggestionListPicture img {
+  width: 30px;
+  border: 1px solid var(--grey-border);
+  border-radius: 70%;
+}
+
+.suggestionListInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15px;
+  font-size: 12px;
+}
+
+.suggestionButton {
+  display: flex;
+  align-items: center;
+  margin-left: 90px;
+  button {
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--blueButton);
+  }
+}

@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--greyColor);
+}
+
+.mainLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginBox {
+  height: 380px;
+  width: 350px;
+  background-color: var(--loginBoxColor);
+  border: var(--loginBoxBorder);
+  border-radius: 1px;
+}
+
+.loginHeader {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-family: 'Lobster', cursive;
+  font-size: 35px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 50px;
+  color: rgba(0, 0, 0, 0.2);
+  input {
+    display: flex;
+    padding: 12px 10px;
+    margin-bottom: 10px;
+    border: var(--inputBorder);
+    border-radius: 2px;
+    background-color: var(--greyColor);
+    color: var(--greyBorder);
+  }
+  button {
+    padding: 12px 5px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 70px;
+    color: var(--whiteColor);
+    border-radius: 3px;
+    background-color: var(--loginFormColor);
+    font-weight: bold;
+  }
+}
+
+.forgotPassword {
+  text-align: center;
+  font-size: 12px;
+  a {
+    color: var(--darkBlueButton);
+    text-decoration: none;
+  }
+}
