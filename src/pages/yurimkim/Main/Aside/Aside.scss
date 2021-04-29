@@ -1,0 +1,97 @@
+.aside {
+  position: fixed;
+  left: 65vw;
+  width: 300px;
+  z-index: -1;
+
+  .myAccount {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    img {
+      width: 56px;
+      border-radius: 50%;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+      margin-left: 12px;
+
+      span:first-child {
+        font-weight: var(--weight-bold);
+      }
+    }
+  }
+
+  section {
+    height: 200px;
+    margin: 12px 0;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+
+    .head {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px;
+      font-size: 14px;
+      font-weight: var(--weight-bold);
+
+      div {
+        color: #a09e9e;
+      }
+    }
+
+    .storyList {
+      li {
+        display: flex;
+        justify-content: flex-start;
+        padding: 6px 16px;
+        font-size: 14px;
+
+        div {
+          margin-left: 16px;
+          color: #a8a7a7;
+
+          p:first-child.title {
+            color: rgb(20, 20, 20);
+            font-weight: var(--weight-bold);
+          }
+        }
+
+        img {
+          width: 32px;
+          border: 2px solid #b21b85;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  section:nth-child(3) {
+    .storyList {
+      li {
+        button {
+          width: 60px;
+          color: var(--color-blue);
+        }
+
+        div {
+          p:last-child {
+            height: 12px;
+            font-size: 12px;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .aside {
+    display: none;
+  }
+}

@@ -1,0 +1,40 @@
+.profilePage {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  width: 230px;
+  height: 160px;
+  color: var(--color-dark-grey);
+  font-weight: var(--weight-bold);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 0 5px 1px rgba(var(--jb7, 0, 0, 0), 0.0975);
+  z-index: 1;
+
+  ul {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--color-border);
+    li {
+      a {
+        display: flex;
+        justify-content: flex-start;
+        padding: 8px 16px;
+
+        p {
+          padding: 0 16px;
+        }
+      }
+      &:hover {
+        background: var(--color-back);
+      }
+    }
+  }
+
+  p {
+    padding: 16px 16px;
+    &:hover {
+      background: var(--color-back);
+    }
+  }
+}
