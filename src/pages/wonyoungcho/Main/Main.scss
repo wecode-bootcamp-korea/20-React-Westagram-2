@@ -1,26 +1,30 @@
-@import url('https://use.fontawesome.com/releases/v5.15.3/css/all.css');
-
+$blackColor: black;
+$blueButton: #0096f6;
+$greyColor: #fafafa;
+$postBtnColor: rgba(173, 216, 230, 0.7);
+$userInfoColor: #949494;
 $whiteColor: white;
 $inputBorder: 1px solid rgba(0, 0, 0, 0.1);
-$greyBorder: rgba(0, 0, 0, 0.2);
+$greyBorder: 1px solid rgba(0, 0, 0, 0.2);
 
 .navBar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
   padding: 20px 50px;
   background-color: $whiteColor;
+  border-bottom: $greyBorder;
 }
 
 .navBarLeft {
   display: flex;
   align-items: center;
-  margin-left: 200px;
+  margin-left: 100px;
   a {
-    color: black;
+    color: $blackColor;
     font-family: 'Lobster', cursive;
     font-size: 25px;
     text-decoration: none;
@@ -54,15 +58,17 @@ $greyBorder: rgba(0, 0, 0, 0.2);
   }
   li {
     margin: 0px 10px;
+    list-style: none;
   }
 }
 
 .mainContainer {
   display: flex;
   justify-content: center;
+  margin-top: 250px;
   height: 75%;
   width: 100%;
-  background-color: var(--greyColor);
+  background-color: $greyColor;
 }
 
 .feeds {
@@ -73,8 +79,8 @@ $greyBorder: rgba(0, 0, 0, 0.2);
 .post {
   width: 100%;
   margin-bottom: 55px;
-  background-color: var(--whiteColor);
-  border: 1px solid var(--greyBorder);
+  background-color: $whiteColor;
+  border: $greyBorder;
   border-radius: 2px;
 }
 
@@ -87,7 +93,7 @@ $greyBorder: rgba(0, 0, 0, 0.2);
     align-items: center;
     width: 30px;
     margin-left: 5px;
-    border: 1px solid var(--greyBorder);
+    border: $greyBorder;
     border-radius: 70%;
   }
 }
@@ -102,7 +108,7 @@ $greyBorder: rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     margin-left: 15px;
-    color: black;
+    color: $blackColor;
     text-decoration: none;
     font-weight: bold;
   }
@@ -176,7 +182,7 @@ $greyBorder: rgba(0, 0, 0, 0.2);
   align-items: center;
   justify-content: space-evenly;
   padding: 12px 12px;
-  border-top: 1px solid var(--greyBorder);
+  border-top: $greyBorder;
 }
 
 .commentsIcon i {
@@ -189,7 +195,7 @@ $greyBorder: rgba(0, 0, 0, 0.2);
   width: 530px;
   padding-left: 20px;
   background-color: transparent;
-  color: var(--whiteColor);
+  color: $whiteColor;
   border: 0px solid;
   resize: none;
 }
@@ -198,7 +204,7 @@ $greyBorder: rgba(0, 0, 0, 0.2);
   padding: 0px;
   background: none;
   border: none;
-  color: var(--postBtnColor);
+  color: $postBtnColor;
 }
 
 .userInfo {
@@ -218,11 +224,14 @@ $greyBorder: rgba(0, 0, 0, 0.2);
 }
 
 .userInfoId a {
+  color: $blackColor;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .userInfoName a {
-  color: var(--userInfoColor);
+  color: $userInfoColor;
+  text-decoration: none;
 }
 
 .suggestionHeader {
@@ -230,12 +239,14 @@ $greyBorder: rgba(0, 0, 0, 0.2);
   justify-content: space-between;
   padding: 10px 0px 10px 0px;
   a {
+    color: $blackColor;
     font-size: 14px;
+    text-decoration: none;
   }
 }
 
 .suggestionHeaderTag {
-  color: #949494;
+  color: $userInfoColor;
   font-size: 14px;
 }
 
@@ -249,7 +260,7 @@ $greyBorder: rgba(0, 0, 0, 0.2);
 
 .suggestionListPicture img {
   width: 30px;
-  border: 1px solid var(--grey-border);
+  border: $greyBorder;
   border-radius: 70%;
 }
 
@@ -269,6 +280,6 @@ $greyBorder: rgba(0, 0, 0, 0.2);
     padding: 0;
     border: none;
     background: none;
-    color: var(--blueButton);
+    color: $blueButton;
   }
 }

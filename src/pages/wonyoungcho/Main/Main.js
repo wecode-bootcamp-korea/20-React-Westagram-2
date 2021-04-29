@@ -7,7 +7,7 @@ class Main extends React.Component {
       <div className="Main">
         <nav className="navBar">
           <div className="navBarLeft">
-            <a href="main.html">Westagram</a>
+            <a href="/#">Westagram</a>
           </div>
           <div className="navBarSearch">
             <i className="fas fa-search fa-xs"></i>
