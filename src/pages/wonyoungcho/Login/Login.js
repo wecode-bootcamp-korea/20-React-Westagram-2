@@ -1,5 +1,6 @@
 import React from 'react';
 import './Login.scss';
+import './LoginInput';
 
 class Login extends React.Component {
   goToMain = () => {
@@ -8,7 +9,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="Login">
+      <div className="Loginwyc">
         <main className="mainLogin">
           <div className="loginBox">
             <header className="loginHeaderContainer">
@@ -19,11 +20,13 @@ class Login extends React.Component {
                 className="loginName"
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
+                onChange={this.handleIdInput}
               />
               <input
                 className="loginPassword"
                 type="password"
                 placeholder="비밀번호"
+                onChange={this.handlePwInput}
               />
               <button
                 className="loginButton"

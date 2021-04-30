@@ -4,7 +4,7 @@ import './Main.scss';
 class Main extends React.Component {
   render() {
     return (
-      <div className="Main">
+      <div className="Mainwyc">
         <nav className="navBar">
           <div className="navBarLeft">
             <a href="/#">Westagram</a>
