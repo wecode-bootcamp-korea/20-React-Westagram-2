@@ -1,0 +1,14 @@
+.mainPage {
+    position: relative;
+    height: 100vh;
+}
+
+.mainPage nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    background-color: var(--main-backgroundColor);
+    border-bottom: var(--border-color) solid 1px;
+}

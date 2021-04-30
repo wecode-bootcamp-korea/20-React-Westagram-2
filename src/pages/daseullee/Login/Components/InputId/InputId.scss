@@ -1,0 +1,24 @@
+/* input 두개 */
+.inputId{
+    display: flex;
+    flex-direction: column;
+    width: 258px;
+    height: 36px;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    border-color:blue;
+
+    input{
+        padding: 9px 0 7px 8px;
+        margin: 3px; 
+        border: 1px solid #bbb;
+        border-radius: 3px;
+        background-color:rgba(var(--b3f,250,250,250),1);
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    
+}

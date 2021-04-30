@@ -1,0 +1,12 @@
+.loginBtn {
+    width: 248px;
+    height: 30px;
+    background-color: rgba(0,149,246,.3);
+    color: white;
+    border-radius: 3px;
+    border: none;
+&:focus{
+    outline: none;
+    border: none;
+}
+}

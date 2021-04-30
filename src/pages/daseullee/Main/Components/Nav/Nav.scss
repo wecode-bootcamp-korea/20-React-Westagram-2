@@ -1,0 +1,43 @@
+.mainNav {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 975px;
+    height: 100%;
+    padding: 0 20px;
+    margin: 10px auto;
+    background-color: var(--main-backgroundColor);
+}
+
+.mainNav_logo {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    height: 100%;
+    left: 30px;
+}
+
+.mainNav_logo {
+    img{
+        width: 103px;
+        height: 35px;
+    }
+}
+
+.mainNav_search {
+    input{
+        padding: 3px 10px 3px 26px;
+    &:focus{
+        outline: none;
+    }
+    }
+}
+
+.mainNav_icons {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    justify-content: space-around;
+    height: 22px;
+}

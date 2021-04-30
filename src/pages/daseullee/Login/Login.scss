@@ -1,0 +1,35 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(var(--b3f,250,250,250),1);
+}
+
+/* 전체 섹션 */
+.loginSection {
+    width: 350px;
+    height: 378px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+    background-color: white;
+}
+
+/* 로고 */
+.westaLogo {
+    font-family:'Lobster', cursive;
+    font-size: 50px;
+}
+
+/* 비밀번호 잊으셨나요? */
+footer {
+    margin-top: 60px;
+    font-size: 15px;
+    color: #385185;
+    font-weight: 600;
+}
