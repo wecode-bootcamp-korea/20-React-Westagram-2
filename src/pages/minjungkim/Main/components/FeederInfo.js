@@ -1,0 +1,18 @@
+import React, { Component } from 'react';
+
+class FeederInfo extends Component {
+  render() {
+    return (
+      <div className="feeder_info">
+        <img
+          className="feeder_avatar"
+          src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/13549579_1658271794499223_201858282_a.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=CM5HpRn-bqcAX8rbCiu&edm=AP_V10EAAAAA&ccb=7-4&oh=8988dacbb422bf306fcda76c4391d97b&oe=60A26FDA&_nc_sid=4f375e"
+          alt="avatar"
+        />
+        <div className="feeder_id">travellingthroughtheworld</div>
+      </div>
+    );
+  }
+}
+
+export default FeederInfo;
