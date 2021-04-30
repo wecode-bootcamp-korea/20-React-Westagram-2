@@ -18,7 +18,7 @@ class AddComment extends React.Component {
         </div>
         {this.props.addComment.map(e => {
           return (
-            <div className="delList">
+            <div className="delList" key={e}>
               <div>
                 <span>yurim4545</span>
                 {e.text}
