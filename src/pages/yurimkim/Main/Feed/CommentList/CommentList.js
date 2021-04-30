@@ -1,5 +1,5 @@
 import React from 'react';
-import addComment from './addComment/addComment';
+import AddComment from './addComment/addComment';
 import './CommentList.scss';
 
 class CommentList extends React.Component {
@@ -21,38 +21,11 @@ class CommentList extends React.Component {
   };
 
   render() {
+    const { content } = this.state;
     return (
       <>
         <div className="commentList">
-          <div className="delList">
-            <div>
-              <span>yurim4545</span>
-              일이삼사오육칠팔구십,😂
-              <span className="delBtn">
-                <i class="fas fa-times"></i>
-              </span>
-            </div>
-            <button>
-              <i class="far fa-heart"></i>
-            </button>
-          </div>
-          {this.state.addComment.map(e => {
-            return (
-              <div className="delList">
-                <div>
-                  <span>yurim4545</span>
-                  {e.text}
-                  <span class="delBtn">
-                    <i class="fas fa-times"></i>
-                  </span>
-                </div>
-                <button>
-                  <i class="far fa-heart"></i>
-                </button>
-              </div>
-            );
-          })}
-          <addComment />
+          <AddComment addComment={this.state.addComment} />
         </div>
         <section className="addComment">
           <input
@@ -63,6 +36,7 @@ class CommentList extends React.Component {
               }
             }}
             className="textarea"
+            value={content}
             placeholder="😀댓글 달기..."
           />
           <button

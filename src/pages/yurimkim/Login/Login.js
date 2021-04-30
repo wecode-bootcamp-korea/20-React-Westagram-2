@@ -26,8 +26,9 @@ class Login extends React.Component {
   };
 
   render() {
+    const { idValue, pwValue } = this.state;
     return (
-      <main className="login">
+      <main className="loginyrk">
         <h1 className="logoText">Westagram</h1>
         <form className="loginForm" name="login">
           <input
@@ -44,14 +45,10 @@ class Login extends React.Component {
           />
           <button
             disabled={
-              this.state.idValue.includes('@') && 5 <= this.state.pwValue.length
-                ? false
-                : true
+              idValue.includes('@') && 5 <= pwValue.length ? false : true
             }
             className={
-              this.state.idValue.includes('@') && 5 <= this.state.pwValue.length
-                ? 'activeBtn'
-                : ''
+              idValue.includes('@') && 5 <= pwValue.length ? 'activeBtn' : ''
             }
             onClick={this.goToMain}
           >

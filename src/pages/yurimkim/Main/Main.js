@@ -7,7 +7,7 @@ import './Main.scss';
 class Main extends React.Component {
   render() {
     return (
-      <React.Fragment className="main">
+      <React.Fragment className="mainyrk">
         <Nav />
         <div className="mainDiv">
           <section className="mainSection">
