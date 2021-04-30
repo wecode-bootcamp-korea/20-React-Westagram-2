@@ -5,8 +5,6 @@ class LoginForm extends Component {
   state = {
     loginId: '',
     loginPassword: '',
-    // isBtnActive: '',
-    // isBtnDisabled: true,
   };
 
   handleValueChange = e => {
@@ -17,12 +15,10 @@ class LoginForm extends Component {
 
   checkValidation = () => {
     const reg = /^\d{3}[. -]?\d{3,4}[. -]?\d{4}$|[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.]+|[a-zA-Z ]+/;
+    const isValidId = reg.test(this.state.loginId);
+    const isValidPw = this.state.loginPassword.length > 5;
 
-    if (reg.test(this.state.loginId) && this.state.loginPassword.length > 5) {
-      console.log('wow');
-      return true;
-    }
-    return false;
+    return isValidId && isValidPw;
   };
 
   goToMain = () => {
