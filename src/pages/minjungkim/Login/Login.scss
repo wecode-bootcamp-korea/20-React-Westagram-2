@@ -86,16 +86,16 @@
     outline: none;
     transition: background-color 200ms ease-in;
 
-    .active {
+    &:active {
+      background-color: var(--inactive-color);
+    }
+
+    &.active {
       background-color: var(--active-color);
       transition: background-color 200ms ease-in;
 
       &:hover {
         cursor: pointer;
-      }
-
-      &:active {
-        background-color: var(--inactive-color);
       }
     }
   }
