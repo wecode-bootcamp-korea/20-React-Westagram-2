@@ -1,13 +1,34 @@
 import React from 'react';
 import './Login.scss';
-import './LoginInput';
 
 class Login extends React.Component {
   goToMain = () => {
     this.props.history.push('/Mainwyc');
   };
 
+  constructor() {
+    super();
+    this.state = {
+      idInputValue: '',
+      pwInputValue: '',
+    };
+  }
+
+  handleIdInput = event => {
+    this.setState({
+      idInputValue: event.target.value,
+    });
+  };
+
+  handlePwInput = event => {
+    this.setState({
+      pwInputValue: event.target.value,
+    });
+  };
+
   render() {
+    // console.log(this.state.idInputValue);
+    // // console.log(this.state.pwInputValue);
     return (
       <div className="Loginwyc">
         <main className="mainLogin">
