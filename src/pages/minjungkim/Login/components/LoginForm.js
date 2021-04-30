@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class LoginForm extends Component {
   state = {
@@ -12,9 +13,13 @@ class LoginForm extends Component {
     });
   };
 
+  goToMain = () => {
+    this.props.history.push('/mainmjk');
+  };
+
   render() {
     return (
-      <div>
+      <div className="login_data">
         <input
           name="loginId"
           onChange={this.handleValueChange}
@@ -33,9 +38,14 @@ class LoginForm extends Component {
           id="password"
           placeholder="비밀번호"
         />
+        <span className="display_password">비밀번호 표시</span>
+        <span className="hide_password">숨기기</span>
+        <button id="login_btn" onClick={this.goToMain}>
+          로그인
+        </button>
       </div>
     );
   }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
