@@ -50,7 +50,18 @@ class Login extends React.Component {
                 onChange={this.handlePwInput}
               />
               <button
-                className="loginButton"
+                className={
+                  this.state.idInputValue.indexOf('@') !== -1 &&
+                  this.state.pwInputValue.length >= 5
+                    ? 'changeButtonColor'
+                    : 'normalButtonColor'
+                }
+                disabled={
+                  this.state.idInputValue.indexOf('@') !== -1 &&
+                  this.state.pwInputValue.length >= 5
+                    ? false
+                    : true
+                }
                 onClick={this.goToMain}
                 type="button"
               >

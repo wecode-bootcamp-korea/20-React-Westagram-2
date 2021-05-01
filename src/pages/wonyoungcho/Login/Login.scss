@@ -3,7 +3,7 @@ $greyColor: #fafafa;
 $whiteColor: white;
 $lightGreyColor: rgba(0, 0, 0, 0.2);
 $loginBoxColor: #ffffff;
-$loginFormColor: rgba(197, 225, 251, 0.7);
+$loginButtonColor: rgba(197, 225, 251, 0.7);
 $loginBoxBorder: 1px solid rgba(0, 0, 0, 0.2);
 $inputBorder: 1px solid rgba(0, 0, 0, 0.1);
 $greyBorder: rgba(0, 0, 0, 0.2);
@@ -44,6 +44,7 @@ body {
   flex-direction: column;
   margin: 0px 50px;
   color: $lightGreyColor;
+
   input {
     display: flex;
     padding: 12px 10px;
@@ -53,6 +54,7 @@ body {
     background-color: $greyColor;
     color: $greyBorder;
   }
+
   button {
     padding: 12px 5px;
     width: 100%;
@@ -61,8 +63,16 @@ body {
     color: $whiteColor;
     border-radius: 3px;
     border: none;
-    background-color: $loginFormColor;
+    background-color: $loginButtonColor;
     font-weight: bold;
+  }
+
+  .changeButtonColor {
+    background-color: $darkBlueColor;
+  }
+
+  .normalButtonColor {
+    background-color: $loginButtonColor;
   }
 }
 
@@ -70,7 +80,7 @@ body {
   text-align: center;
   font-size: 12px;
   a {
-    color: var(--darkBlueButton);
+    color: $darkBlueColor;
     text-decoration: none;
   }
 }
