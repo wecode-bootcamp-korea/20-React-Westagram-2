@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import NavForm from './NavForm';
-// import NavUserMenu from './NavUserMenu';
-// import NavIcons from './NavIcons';
+import NavSearchResult from './NavSearchResult';
 import { Link } from 'react-router-dom';
 
 class Nav extends Component {
@@ -11,7 +9,12 @@ class Nav extends Component {
         <div className="nav_logo">
           <Link to="/Loginmjk">Westagram</Link>
         </div>
-        <NavForm />
+        <form className="nav_search">
+          <input className="nav_input" type="text" placeholder="검색" />
+          <i className="fas fa-search"></i>
+          <i className="fas fa-times-circle"></i>
+          <NavSearchResult />
+        </form>
         <div className="nav_icons">
           <i className="fas fa-home"></i>
           <i className="far fa-paper-plane"></i>

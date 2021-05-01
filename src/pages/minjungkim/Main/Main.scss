@@ -2,6 +2,7 @@
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -296,6 +297,7 @@
 }
 .feeder_id {
   font-weight: bold;
+  margin-right: var(--space-medium);
 }
 
 .feed_comment_list {
@@ -307,6 +309,7 @@
 
 .friend_id {
   font-weight: bold;
+  margin-right: var(--space-medium);
 }
 
 .like_btn {
