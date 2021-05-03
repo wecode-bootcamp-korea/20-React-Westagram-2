@@ -1,4 +1,5 @@
 import React from 'react';
+import Comment from './addComment/comment';
 import AddComment from './addComment/addComment';
 import './CommentList.scss';
 
@@ -8,7 +9,20 @@ class CommentList extends React.Component {
     this.state = {
       content: '',
       addComment: [],
+      newComment: [],
     };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          addComment: data,
+        });
+      });
   }
 
   handleContent = e => {
@@ -16,17 +30,23 @@ class CommentList extends React.Component {
   };
 
   addComment = () => {
-    this.state.addComment.push({ text: this.state.content });
+    this.state.newComment.push({ text: this.state.content });
     this.setState({ content: '' });
   };
 
   render() {
-    const { content, addComment } = this.state;
+    const { content, addComment, newComment } = this.state;
     return (
       <>
         <div className="commentList">
-          {addComment.map((el, index) => {
-            return <AddComment addComment={(addComment, el)} key={index} />;
+          {addComment.map(el => {
+            return (
+              <Comment key={el.id} name={el.userName} content={el.content} />
+            );
+          })}
+
+          {newComment.map((el, index) => {
+            return <AddComment newComment={(newComment, el)} key={index} />;
           })}
         </div>
         <section className="addComment">
