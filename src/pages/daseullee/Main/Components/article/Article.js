@@ -2,6 +2,13 @@ import React from 'react';
 import './Article.scss';
 
 class Article extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      value: '',
+    };
+  }
+
   render() {
     return (
       <article className="instaPost">
