@@ -14,7 +14,7 @@ $greyBorder: 1px solid rgba(0, 0, 0, 0.2);
   top: 0px;
   left: 0px;
   width: 100%;
-  padding: 20px 50px;
+  padding: 10px 30px;
   background-color: $whiteColor;
   border-bottom: $greyBorder;
 }
@@ -65,7 +65,6 @@ $greyBorder: 1px solid rgba(0, 0, 0, 0.2);
 .mainContainer {
   display: flex;
   justify-content: center;
-  margin-top: 250px;
   height: 75%;
   width: 100%;
   background-color: $greyColor;
@@ -177,6 +176,12 @@ $greyBorder: 1px solid rgba(0, 0, 0, 0.2);
   font-weight: lighter;
 }
 
+.newComment {
+  color: $blackColor;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .comments {
   display: flex;
   align-items: center;
@@ -185,17 +190,21 @@ $greyBorder: 1px solid rgba(0, 0, 0, 0.2);
   border-top: $greyBorder;
 }
 
+.commentBox {
+  list-style: none;
+}
+
 .commentsIcon i {
   display: flex;
   align-items: center;
 }
 
-.commentsInput textarea {
+.commentsInput input {
   height: 20px;
   width: 530px;
   padding-left: 20px;
   background-color: transparent;
-  color: $whiteColor;
+  color: $blackColor;
   border: 0px solid;
   resize: none;
 }

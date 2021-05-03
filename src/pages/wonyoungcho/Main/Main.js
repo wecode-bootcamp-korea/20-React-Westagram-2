@@ -1,7 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Comment from './Comment';
 import './Main.scss';
 
-class Main extends React.Component {
+class Main extends Component {
+  constructor() {
+    super();
+    this.state = {
+      newReply: '',
+      replies: [
+        {
+          name: 'wychrischo',
+          text: 'I love going to the Brooklyn Museum.',
+        },
+      ],
+    };
+  }
+
+  textChange = event => {
+    this.setState({
+      newReply: event.target.value,
+    });
+  };
+
+  add = () => {
+    let arry = this.state.replies;
+    arry.push({
+      name: 'wychrischo',
+      text: this.state.newReply,
+    });
+
+    this.setState({
+      replies: arry,
+      newReply: '',
+    });
+  };
+
+  pressEnter = event => {
+    if (event.key === 'Enter' && this.state.newReply) {
+      this.add();
+      event.target.value = '';
+    }
+  };
+
   render() {
     return (
       <div className="Mainwyc">
@@ -69,12 +109,15 @@ class Main extends React.Component {
               </div>
               <div className="postUserContainer">
                 <div className="postUser">
-                  <span className="postUserId">brooklynmuseum</span>
+                  <span className="postUserId">brooklynmuseum </span>
                   <span className="postUserDescription">
                     The Museum’s outdoor public spaces, including our plaza and
                     front steps, are open and available to our neighbors to
                     gather safely—to organize, reflect, and replenish.
                   </span>
+                </div>
+                <div className="commentBox">
+                  <Comment commentList={this.state.replies} />
                 </div>
               </div>
               <div className="postTime">
@@ -85,13 +128,18 @@ class Main extends React.Component {
                   <i className="far fa-smile fa-lg"></i>
                 </div>
                 <div className="commentsInput">
-                  <textarea
-                    className="commentsInputComment"
+                  <input
+                    className="commentsInput"
                     placeholder="댓글 달기..."
-                  ></textarea>
+                    onChange={this.textChange}
+                    onKeyPress={this.pressEnter}
+                    value={this.state.newreply}
+                  ></input>
                 </div>
                 <div className="commentsPost">
-                  <button className="commentsPostButton">게시</button>
+                  <button className="commentsPostButton" onClick={this.add}>
+                    게시
+                  </button>
                 </div>
               </div>
             </article>
