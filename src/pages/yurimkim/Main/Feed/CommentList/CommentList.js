@@ -21,15 +21,14 @@ class CommentList extends React.Component {
   };
 
   render() {
-    const { content } = this.state;
+    const { content, addComment } = this.state;
     return (
       <>
         <div className="commentList">
-          {this.state.addComment.map((el, index) => {
-            return (
-              <AddComment addComment={this.state.addComment} key={index} />
-            );
-          })}
+          <AddComment addComment={addComment} />
+          {/* {addComment.map((el, index) => {
+            return <AddComment addComment={addComment} key={index} />;
+          })} */}
         </div>
         <section className="addComment">
           <input
