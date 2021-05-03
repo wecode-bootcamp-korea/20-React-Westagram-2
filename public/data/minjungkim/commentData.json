@@ -1,19 +1,19 @@
 [
   {
     "id": 1,
-    "userName": "wecode",
+    "name": "wecode",
     "value": "Welcome to world best coding bootcamp!",
     "isLiked": true
   },
   {
     "id": 2,
-    "userName": "joonsikyang",
+    "name": "joonsikyang",
     "value": "Hi there.",
     "isLiked": false
   },
   {
     "id": 3,
-    "userName": "jayPark",
+    "name": "jayPark",
     "value": "Hey.",
     "isLiked": false
   }

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class FeedComment extends Component {
+  static defaultProps = {
+    name: '1dookong',
+  };
+
   render() {
     const { value, name } = this.props;
 

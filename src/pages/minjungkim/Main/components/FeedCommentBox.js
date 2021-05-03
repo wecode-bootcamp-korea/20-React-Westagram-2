@@ -4,17 +4,17 @@ import FeedUserComment from './FeedUserComment';
 
 export class FeedCommentBox extends Component {
   render() {
-    const { comments } = this.props;
+    const { comments, text } = this.props;
 
     return (
       <div className="feed_comment_box">
-        <FeedUserComment />
+        <FeedUserComment comments={text} />
         <ul className="feed_comment_container">
           {comments.map(comment => (
             <FeedComment
               key={comment.id}
               value={comment.value}
-              name={comment.userName}
+              name={comment.name}
             />
           ))}
         </ul>
