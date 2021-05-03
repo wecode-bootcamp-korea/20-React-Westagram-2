@@ -2,7 +2,6 @@ import React from 'react';
 
 class AddComment extends React.Component {
   render() {
-    console.log(this.props.addComment);
     return (
       <>
         <div className="delList">
