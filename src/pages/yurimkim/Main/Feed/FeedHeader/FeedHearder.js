@@ -3,11 +3,13 @@ import './FeedHeader.scss';
 
 class FeedHeader extends React.Component {
   render() {
+    console.log(this.props.userImg);
     return (
       <header className="feedHeader">
-        <img src="/images/yurimkim/wecode.png" alt="wecode" />
+        <img src={this.props.userImg} alt="wecode" />
+
         <div>
-          <a href="#">wecode</a>
+          <a href="#">{this.props.userName}</a>
           <a href="#">
             <i className="fas fa-ellipsis-h"></i>
           </a>

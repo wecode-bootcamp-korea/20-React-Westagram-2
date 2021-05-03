@@ -5,11 +5,15 @@ import './Feed.scss';
 
 class Feed extends React.Component {
   render() {
+    console.log(this.props);
+    const { userName, userImg, feedImgUrl, feedImgAlt } = this.props;
+    console.log(feedImgUrl);
+
     return (
       <article className="feed">
-        <FeedHeader />
+        <FeedHeader userName={userName} userImg={userImg} />
         <main className="feedContent">
-          <img alt="instagram feed" src="/images/yurimkim/content.jpg" />
+          <img alt={feedImgAlt} src={feedImgUrl} />
         </main>
         <div className="feedBottom">
           <section>
