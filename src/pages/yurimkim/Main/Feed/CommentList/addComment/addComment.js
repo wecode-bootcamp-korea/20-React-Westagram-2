@@ -16,22 +16,18 @@ class AddComment extends React.Component {
             <i class="far fa-heart"></i>
           </button>
         </div>
-        {this.props.addComment.map(e => {
-          return (
-            <div className="delList" key={e}>
-              <div>
-                <span>yurim4545</span>
-                {e.text}
-                <span class="delBtn">
-                  <i class="fas fa-times"></i>
-                </span>
-              </div>
-              <button>
-                <i class="far fa-heart"></i>
-              </button>
-            </div>
-          );
-        })}
+        <div className="delList">
+          <div>
+            <span>yurim4545</span>
+            {this.props.addComment.text}
+            <span class="delBtn">
+              <i class="fas fa-times"></i>
+            </span>
+          </div>
+          <button>
+            <i class="far fa-heart"></i>
+          </button>
+        </div>
       </>
     );
   }
