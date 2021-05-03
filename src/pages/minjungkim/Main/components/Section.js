@@ -7,6 +7,19 @@ class Section extends Component {
     comment: [],
   };
 
+  componentDidMount() {
+    const option = {
+      method: 'GET',
+    };
+    fetch('http://localhost:3000/data/minjungkim/commentData.json', option)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          comment: data,
+        });
+      });
+  }
+
   handleCreateComment = data => {
     this.setState({
       comment: [...this.state.comment, data],

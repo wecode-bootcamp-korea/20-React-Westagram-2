@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 class FeedComment extends Component {
   render() {
-    const { comment } = this.props;
+    const { value, name } = this.props;
 
     return (
       <li className="feed_comment_list">
         <div className="feed_comment">
-          <span className="friend_id">1dookong</span>
-          <span className="friend_comment">{comment}</span>
+          <span className="friend_id">{name}</span>
+          <span className="friend_comment">{value}</span>
         </div>
         <div className="feed_controls">
           <span className="like_btn">

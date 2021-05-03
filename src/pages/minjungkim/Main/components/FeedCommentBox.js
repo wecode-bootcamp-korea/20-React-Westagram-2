@@ -11,7 +11,11 @@ export class FeedCommentBox extends Component {
         <FeedUserComment />
         <ul className="feed_comment_container">
           {comments.map(comment => (
-            <FeedComment key={comment.id} comment={comment.value} />
+            <FeedComment
+              key={comment.id}
+              value={comment.value}
+              name={comment.userName}
+            />
           ))}
         </ul>
       </div>
