@@ -44,7 +44,7 @@ export class Feed extends Component {
         </div>
 
         {/* 올린사진 */}
-        <img className="feed_image" src={this.props.img} alt="Hawaii" />
+        <img className="feed_image" src={this.props.img} alt="wonderful" />
         <div className="feed_contents">
           <div className="feed_icons_row">
             <div className="feed_icons">
