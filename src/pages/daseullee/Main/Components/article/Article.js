@@ -5,11 +5,29 @@ class Article extends React.Component {
   constructor() {
     super();
     this.state = {
-      value: '',
+      comments: '', //input의 값이 들어갈 콘텐츠 지정
+      posting: [], //content입력값을 map함수로 쓰기 위한 빈 배열(나중에 posting배열에 content값이 들어간다.)
     };
   }
 
+  getInputComments = e => {
+    this.setState({ comments: e.target.value });
+  };
+
+  postingComments = () => {
+    this.state.posting.push({ text: this.state.comments });
+    this.setState({ comments: '' });
+  };
+
+  enterComments = e => {
+    if (e.keyCode === 13) {
+      this.postingComments();
+    }
+  };
+
   render() {
+    console.log(this.state.comments);
+    console.log(this.state.posting);
     return (
       <article className="instaPost">
         <header className="instaPost_header">
@@ -51,6 +69,16 @@ class Article extends React.Component {
               <p>주말에 친구들이랑 셀카 한방, 우리 우정 영원히~~~~~!</p>
             </div>
           </div>
+          {this.state.posting.map(e => {
+            return (
+              <div className="instaPost_mainContent">
+                <div className="instaPost_content">
+                  <p className="instaPost_id">meow_meow</p>
+                  <p>{e.text}</p>
+                </div>
+              </div>
+            );
+          })}
           <p className="instaPost_time">2시간 전</p>
           <div className="instaPost_commentsBar">
             <img
@@ -61,8 +89,12 @@ class Article extends React.Component {
               className="instaPost_input"
               type="text"
               placeholder="댓글 달기..."
+              onChange={this.getInputComments}
+              onKeyDown={this.enterComments}
             />
-            <button className="submit">게시</button>
+            <button onClick={this.postingComments} className="submit">
+              게시
+            </button>
           </div>
         </div>
       </article>

@@ -8,13 +8,13 @@ import './Button.scss';
 
 class Button extends React.Component {
   goToMain = () => {
-    // this.props.history.push('/maindsl');
+    this.props.history.push('/maindsl');
   };
 
   render() {
     return (
       <button
-        className={this.props.test ? 'changeColorBtn' : 'loginBtn'}
+        className={this.props.changeColor ? 'changeColorBtn' : 'loginBtn'}
         onClick={this.goToMain}
       >
         로그인

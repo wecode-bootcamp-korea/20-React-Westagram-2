@@ -50,7 +50,7 @@ class Login extends React.Component {
           getIdInput={this.handleIdInput}
           getPwInput={this.handlePwInput}
         />
-        <Button test={this.state.isButtonOn} />
+        <Button changeColor={this.state.isButtonOn} />
         <footer>비밀번호를 잊으셨나요?</footer>
       </div>
     );
