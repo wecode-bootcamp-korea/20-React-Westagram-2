@@ -25,7 +25,12 @@ class Section extends Component {
     return (
       <section className="section">
         {this.state.feeds.map(feed => (
-          <Feed key={feed.id} text={feed.text} img={feed.imgUrl} />
+          <Feed
+            key={feed.id}
+            text={feed.text}
+            img={feed.imgUrl}
+            alt={feed.alt}
+          />
         ))}
       </section>
     );

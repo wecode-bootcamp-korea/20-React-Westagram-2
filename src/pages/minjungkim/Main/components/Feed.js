@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import NewComment from './NewComment';
 import FeedCommentBox from './FeedCommentBox';
+import FeedIcons from './FeedIcons';
+import FeedLikes from './FeedLikes';
 
 export class Feed extends Component {
   state = {
@@ -28,6 +30,7 @@ export class Feed extends Component {
   };
 
   render() {
+    const { img, alt, text } = this.props;
     return (
       <article className="feed">
         {/* 사진, 아이디 */}
@@ -44,26 +47,11 @@ export class Feed extends Component {
         </div>
 
         {/* 올린사진 */}
-        <img className="feed_image" src={this.props.img} alt="wonderful" />
+        <img className="feed_image" src={img} alt={alt} />
         <div className="feed_contents">
-          <div className="feed_icons_row">
-            <div className="feed_icons">
-              <i className="fas fa-heart"></i>
-              <i className="far fa-comment"></i>
-              <i className="far fa-paper-plane"></i>
-            </div>
-            <i className="far fa-bookmark"></i>
-          </div>
-          <div className="feed_likes">
-            <div>
-              <strong>wecode_bootcamp</strong>님 <strong>여러 명</strong>이
-              좋아합니다
-            </div>
-          </div>
-          <FeedCommentBox
-            text={this.props.text}
-            comments={this.state.comments}
-          />
+          <FeedIcons />
+          <FeedLikes />
+          <FeedCommentBox text={text} comments={this.state.comments} />
           <div className="feed_posting_time">42분 전</div>
         </div>
         <NewComment onSubmit={this.handleCreateComment} />
