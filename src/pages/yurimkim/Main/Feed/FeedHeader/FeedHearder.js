@@ -3,7 +3,6 @@ import './FeedHeader.scss';
 
 class FeedHeader extends React.Component {
   render() {
-    console.log(this.props.userImg);
     return (
       <header className="feedHeader">
         <img src={this.props.userImg} alt="wecode" />

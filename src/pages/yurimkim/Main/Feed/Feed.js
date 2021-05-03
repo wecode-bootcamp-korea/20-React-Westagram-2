@@ -5,10 +5,7 @@ import './Feed.scss';
 
 class Feed extends React.Component {
   render() {
-    console.log(this.props);
     const { userName, userImg, feedImgUrl, feedImgAlt } = this.props;
-    console.log(feedImgUrl);
-
     return (
       <article className="feed">
         <FeedHeader userName={userName} userImg={userImg} />

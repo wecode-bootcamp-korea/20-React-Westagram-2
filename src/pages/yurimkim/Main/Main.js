@@ -23,7 +23,6 @@ class Main extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     const { feedData } = this.state;
     return (
       <React.Fragment className="mainyrk">
