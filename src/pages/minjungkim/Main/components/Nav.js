@@ -16,7 +16,10 @@ class Nav extends Component {
           <NavSearchResult />
         </form>
         <div className="nav_icons">
-          <i className="fas fa-home"></i>
+          <a href="https://www.instagram.com/1dookong/">
+            <i className="fas fa-home"></i>
+          </a>
+
           <i className="far fa-paper-plane"></i>
           <i className="far fa-compass"></i>
           <i className="far fa-heart"></i>

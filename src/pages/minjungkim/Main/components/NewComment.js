@@ -2,19 +2,21 @@ import React, { Component } from 'react';
 
 class NewComment extends Component {
   state = {
+    id: 0,
     value: '',
   };
 
   handleCommentInput = e => {
     this.setState({
+      id: this.state.id + 1,
       value: e.target.value,
     });
   };
 
   handleSubmitComment = e => {
     e.preventDefault();
-    if (this.state.value) {
-      this.props.onSubmit(this.state.value);
+    if (this.state) {
+      this.props.onSubmit(this.state);
     } else {
       alert("Woops, you don't comment anything here!");
     }

@@ -22,10 +22,13 @@
   &_logo {
     font-family: 'Lobster Two', cursive;
     font-size: 30px;
+    flex: 1;
   }
 
   &_search {
     position: relative;
+    flex: 1;
+    text-align: center;
 
     .fa-search,
     .fa-times-circle {
@@ -37,7 +40,7 @@
     }
 
     .fa-search {
-      left: 34%;
+      left: 36%;
     }
     .fa-times-circle {
       opacity: 0;
@@ -52,32 +55,35 @@
     padding: var(--space-small) var(--space-xxl);
     border: 1px solid var(--border-color);
     border-radius: 4px;
+    text-align: center;
 
     &::placeholder {
       text-align: center;
     }
 
+    &:focus,
     &:focus::placeholder {
       text-align: start;
     }
 
     &:focus + .fa-search,
     .active + .fa-search {
-      left: 5%;
+      left: 10%;
     }
 
     &:focus ~ .fa-times-circle,
     .active ~ .fa-times-circle {
       opacity: 1;
-      right: 5%;
+      right: 10%;
     }
   }
 
   &_icons {
-    font-size: 28px;
+    font-size: 24px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    flex: 1;
 
     i {
       padding-right: var(--space-large);
@@ -261,7 +267,7 @@
     &_row {
       display: flex;
       justify-content: space-between;
-      font-size: 26px;
+      font-size: 24px;
     }
 
     i {
@@ -285,7 +291,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--space-small) 0;
+    margin: var(--space-small) 0;
+  }
+
+  &_controls {
+    font-size: var(--fs-xs);
   }
 
   &_posting_time {
@@ -301,7 +311,13 @@
     align-items: center;
     padding: var(--space-large);
   }
-
+  &_comment {
+    max-width: 530px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: var(--space-small) 0;
+  }
   &_text {
     width: 90%;
     display: flex;
@@ -338,8 +354,13 @@
   &_comment {
     display: inline-block;
     max-width: 380px;
+
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    a {
+      color: #00376b;
+    }
   }
 
   &_id {
@@ -348,11 +369,16 @@
   }
 }
 
-.friend_id {
-  font-weight: bold;
-  margin-right: var(--space-medium);
-}
+.friend {
+  &_id {
+    display: inline-block;
+    font-weight: bold;
+  }
 
+  &_comment {
+    margin-left: var(--space-medium);
+  }
+}
 .like_btn {
   margin-right: var(--space-small);
 
@@ -490,6 +516,7 @@ footer {
 
     &_likes {
       padding: 7px 0px;
+      font-size: var(--fs-small);
     }
 
     &_icons_row {
@@ -497,12 +524,18 @@ footer {
     }
 
     &_user_comment {
+      font-size: var(--fs-small);
       padding: 3px 0px;
+    }
+
+    &_comment {
+      max-width: 360px;
+      padding: var(--space-small) 0;
     }
 
     &_new_comment {
       height: 40px;
-      padding: var(--space-medium);
+      padding: var(--space-small);
     }
 
     &_text {
@@ -510,6 +543,10 @@ footer {
         font-size: var(--fs-xl);
         margin-right: var(--space-medium);
       }
+    }
+
+    &_comment_list {
+      font-size: var(--fs-small);
     }
   }
 

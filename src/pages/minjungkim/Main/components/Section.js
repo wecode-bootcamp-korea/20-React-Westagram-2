@@ -4,12 +4,12 @@ import FeedCommentBox from './FeedCommentBox';
 
 class Section extends Component {
   state = {
-    value: [],
+    comment: [],
   };
 
   handleCreateComment = data => {
     this.setState({
-      value: [...this.state.value, data],
+      comment: [...this.state.comment, data],
     });
   };
 
@@ -51,7 +51,7 @@ class Section extends Component {
                 좋아합니다
               </div>
             </div>
-            <FeedCommentBox comments={this.state.value} />
+            <FeedCommentBox comments={this.state.comment} />
             <div className="feed_posting_time">42분 전</div>
           </div>
           <NewComment onSubmit={this.handleCreateComment} />
