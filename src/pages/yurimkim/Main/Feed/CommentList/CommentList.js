@@ -25,10 +25,9 @@ class CommentList extends React.Component {
     return (
       <>
         <div className="commentList">
-          <AddComment addComment={addComment} />
-          {/* {addComment.map((el, index) => {
-            return <AddComment addComment={addComment} key={index} />;
-          })} */}
+          {addComment.map((el, index) => {
+            return <AddComment addComment={(addComment, el)} key={index} />;
+          })}
         </div>
         <section className="addComment">
           <input
