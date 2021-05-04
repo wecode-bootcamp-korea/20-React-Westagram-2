@@ -1,4 +1,5 @@
 import React from 'react';
+import Comments from '../Comments/Comments';
 import './Article.scss';
 
 class Article extends React.Component {
@@ -6,7 +7,9 @@ class Article extends React.Component {
     super();
     this.state = {
       comments: '', //input의 값이 들어갈 콘텐츠 지정
-      posting: [], //content입력값을 map함수로 쓰기 위한 빈 배열(나중에 posting배열에 content값이 들어간다.)
+      posting: [],
+      commentIndex: 0,
+      //content입력값을 map함수로 쓰기 위한 빈 배열(나중에 posting배열에 content값이 들어간다.)
     };
   }
 
@@ -16,7 +19,7 @@ class Article extends React.Component {
 
   postingComments = () => {
     this.state.posting.push({ text: this.state.comments });
-    this.setState({ comments: '' });
+    this.setState({ comments: '', commentIndex: this.state.commentIndex + 1 });
   };
 
   enterComments = e => {
@@ -27,7 +30,7 @@ class Article extends React.Component {
 
   render() {
     console.log(this.state.comments);
-    console.log(this.state.posting);
+    console.log(this.state.commentIndex);
     return (
       <article className="instaPost">
         <header className="instaPost_header">
@@ -69,16 +72,12 @@ class Article extends React.Component {
               <p>주말에 친구들이랑 셀카 한방, 우리 우정 영원히~~~~~!</p>
             </div>
           </div>
-          {this.state.posting.map(e => {
-            return (
-              <div className="instaPost_mainContent">
-                <div className="instaPost_content">
-                  <p className="instaPost_id">meow_meow</p>
-                  <p>{e.text}</p>
-                </div>
-              </div>
-            );
-          })}
+          {this.state.posting.map(text => (
+            <Comments
+              commentsContent={text}
+              commentsIndex={this.state.commentIndex}
+            />
+          ))}
           <p className="instaPost_time">2시간 전</p>
           <div className="instaPost_commentsBar">
             <img
@@ -89,6 +88,7 @@ class Article extends React.Component {
               className="instaPost_input"
               type="text"
               placeholder="댓글 달기..."
+              value={this.state.comments}
               onChange={this.getInputComments}
               onKeyDown={this.enterComments}
             />
