@@ -18,8 +18,12 @@ class Article extends React.Component {
   };
 
   postingComments = () => {
-    this.state.posting.push({ text: this.state.comments });
-    this.setState({ comments: '', commentIndex: this.state.commentIndex + 1 });
+    // this.state.posting.push({ text: this.state.comments }); //전개연산자로 쓰기
+    this.setState({
+      commentIndex: this.state.commentIndex + 1,
+      posting: [...this.state.posting, this.state.comments],
+      comments: '',
+    });
   };
 
   enterComments = e => {
@@ -72,12 +76,9 @@ class Article extends React.Component {
               <p>주말에 친구들이랑 셀카 한방, 우리 우정 영원히~~~~~!</p>
             </div>
           </div>
-          {this.state.posting.map(text => (
-            <Comments
-              commentsContent={text}
-              commentsIndex={this.state.commentIndex}
-            />
-          ))}
+          {this.state.posting.map((text, index) => {
+            return <Comments commentsContent={text} key={index} />;
+          })}
           <p className="instaPost_time">2시간 전</p>
           <div className="instaPost_commentsBar">
             <img
