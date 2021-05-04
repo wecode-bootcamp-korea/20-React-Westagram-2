@@ -9,7 +9,7 @@ class CommentList extends React.Component {
     this.state = {
       content: '',
       addComment: [],
-      newComment: [],
+      newComment: [{ id: 0, text: '' }],
     };
   }
 
@@ -28,8 +28,13 @@ class CommentList extends React.Component {
   };
 
   addComment = () => {
-    this.state.newComment.push({ text: this.state.content });
-    this.setState({ content: '' });
+    this.setState({
+      newComment: [
+        ...this.state.newComment,
+        { id: this.state.id + 1, text: this.state.content },
+      ],
+      content: '',
+    });
   };
 
   render() {
@@ -43,8 +48,10 @@ class CommentList extends React.Component {
             );
           })}
 
-          {newComment.map((el, index) => {
-            return <AddComment newComment={(newComment, el)} key={index} />;
+          {newComment.map(el => {
+            return (
+              <AddComment newComment={(newComment, el)} key={newComment.id} />
+            );
           })}
         </div>
         <section className="addComment">
@@ -61,7 +68,7 @@ class CommentList extends React.Component {
           />
           <button
             onClick={this.addComment}
-            className={this.state.content ? 'addBtnColor' : 'addBtn'}
+            className={content ? 'addBtnColor' : 'addBtn'}
           >
             게시
           </button>
