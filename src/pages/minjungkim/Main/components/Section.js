@@ -28,7 +28,7 @@ class Section extends Component {
           <Feed
             key={feed.id}
             text={feed.text}
-            img={feed.imgUrl}
+            imgUrl={feed.imgUrl}
             alt={feed.alt}
           />
         ))}
