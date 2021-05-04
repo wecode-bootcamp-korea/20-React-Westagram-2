@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import NavSearchLists from './NavSearchLists';
 import NavSearchResultHeader from './NavSearchResultHeader';
+import NavSearchLists from './NavSearchLists';
 
 class NavSearchResult extends Component {
   render() {

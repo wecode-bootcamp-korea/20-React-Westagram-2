@@ -2,13 +2,17 @@
 
 :root {
   /* color */
-  --white: #ffff;
-  --grey: #8e8e8e;
-  --bg-color: #fafafa;
-  --border-color: #dbdbdb;
-  --border-color-light: #f1eded;
-  --active-color: #0195f7;
-  --inactive-color: #b2dffc;
+  --color-light-grey: #dbdbdb; //lightgrey
+  --color-grey: #c7c7c7; //grey
+  --color-dark-grey: #747272; //dark grey
+  --bg-color: #fafafa; //bg
+  --color-white: #ffffff;
+  --color-black: #221f1f;
+  --border-color: #dbdbdb; //border
+  --border-color-light: #f1eded; //border light
+  --active-color: #0195f7; // active
+  --inactive-color: #b2dffc; //inactive
+
   /* size */
   --fs-xs: 12px;
   --fs-small: 14px;
@@ -22,6 +26,8 @@
   --space-large: 15px;
   --space-xl: 20px;
   --space-xxl: 30px;
+  /* font weight*/
+  --weight-bold: 800;
 }
 
 body {
@@ -51,8 +57,5 @@ input {
   outline: none;
   background-color: transparent;
   font-family: inherit;
-}
-
-i {
   cursor: pointer;
 }

@@ -8,8 +8,6 @@ import wonyoungchoLogin from './pages/wonyoungcho/Login/Login';
 import wonyoungchoMain from './pages/wonyoungcho/Main/Main';
 import yurimkimLogin from './pages/yurimkim/Login/Login';
 import yurimkimMain from './pages/yurimkim/Main/Main';
-import './pages/minjungkim/Style/Common_mjk.scss';
-import './pages/minjungkim/Style/Reset_mjk.scss';
 
 class Routes extends React.Component {
   render() {

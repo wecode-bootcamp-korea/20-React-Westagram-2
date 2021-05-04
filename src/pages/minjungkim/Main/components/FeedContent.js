@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import FeedCommentBox from './FeedCommentBox';
 import FeedIcons from './FeedIcons';
 import FeedLikes from './FeedLikes';
+import FeedCommentBox from './FeedCommentBox';
 
 class FeedContent extends Component {
   render() {

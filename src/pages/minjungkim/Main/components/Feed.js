@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import NewComment from './NewComment';
-import FeedContent from './FeedContent.js';
 import FeedOwner from './FeedOwner.js';
+import FeedContent from './FeedContent.js';
+import NewComment from './NewComment';
 
 export class Feed extends Component {
   state = {

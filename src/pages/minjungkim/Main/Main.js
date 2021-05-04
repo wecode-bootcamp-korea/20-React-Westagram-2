@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import MainContainer from './components/MainContainer';
 import Nav from './components/Nav';
+import MainContainer from './components/MainContainer';
 import './Main.scss';
 
 export class Main extends Component {

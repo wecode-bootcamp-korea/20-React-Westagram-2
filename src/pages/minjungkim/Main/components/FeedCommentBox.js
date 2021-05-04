@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import FeedComment from './FeedComment';
 import FeedUserComment from './FeedUserComment';
+import FeedComment from './FeedComment';
 
 export class FeedCommentBox extends Component {
   render() {

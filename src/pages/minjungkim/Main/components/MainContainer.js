@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Aside from './Aside';
 import Section from './Section';
+import Aside from './Aside';
 
 class MainContainer extends Component {
   render() {

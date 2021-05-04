@@ -1,71 +1,71 @@
 .login_mjk {
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 
-  main {
-    width: 350px;
-    height: auto;
-    background-color: var(--white);
+  .main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 350px;
+    height: auto;
     padding: var(--space-xxl);
+    background-color: var(--color-white);
     border: 1px solid var(--border-color);
   }
 
   .logo {
+    margin-bottom: var(--space-xxl);
     font-family: 'Lobster Two', cursive;
     font-size: calc(var(--fs-medium) * 3);
     font-weight: lighter;
-    margin-bottom: var(--space-xxl);
   }
 
   .login_form {
-    font-family: inherit;
     width: 100%;
+    font-family: inherit;
   }
 
   .login_data {
-    font-size: var(--fs-medium);
-    padding: var(--space-medium) 0;
     position: relative;
+    padding: var(--space-medium) 0;
+    font-size: var(--fs-medium);
 
     .inputForm {
       width: 100%;
-      background-color: var(--bg-color);
-      font-family: inherit;
-      font-size: var(--fs-small);
-      border: 1px solid var(--border-color);
-      border-radius: 3px;
       padding: var(--space-medium);
       margin-bottom: 10px;
+      background-color: var(--bg-color);
+      border: 1px solid var(--border-color);
+      border-radius: 3px;
       outline: none;
+      font-family: inherit;
+      font-size: var(--fs-small);
       transition: border 200ms ease-in;
 
       &::placeholder {
-        color: var(--grey);
+        color: var(--color-grey);
       }
 
       &:focus {
-        border: 1px solid var(--grey);
+        border: 1px solid var(--color-grey);
       }
     }
   }
 
   .display_password,
   .hide_password {
-    font-size: var(--fs-small);
-    font-weight: bold;
     position: absolute;
     right: 10px;
     bottom: 30px;
-    cursor: pointer;
     display: none;
+    font-size: var(--fs-small);
+    font-weight: bold;
+    cursor: pointer;
 
     .show {
       display: block;
@@ -74,16 +74,16 @@
 
   #login_btn {
     width: 100%;
+    padding: 10px;
+    margin-bottom: var(--space-xl);
+    color: var(--color-white);
     background-color: var(--inactive-color);
+    border: none;
+    border-radius: 5px;
+    outline: none;
     font-family: inherit;
     font-size: var(--fs-small);
     font-weight: bold;
-    color: var(--white);
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: var(--space-xl);
-    outline: none;
     transition: background-color 200ms ease-in;
 
     &:active {
@@ -101,54 +101,54 @@
   }
 
   .login_alternative {
+    position: relative;
     width: 100%;
-    color: var(--grey);
+    margin-bottom: var(--space-xxl);
+    color: var(--color-grey);
     font-size: var(--fs-small);
     text-align: center;
-    margin-bottom: var(--space-xxl);
-    position: relative;
 
     &::before {
       content: '';
-      width: 40%;
-      height: 1px;
-      background-color: var(--grey);
       position: absolute;
       left: 0;
       top: 50%;
+      width: 40%;
+      height: 1px;
+      background-color: var(--color-grey);
     }
 
     &::before {
       content: '';
-      width: 40%;
-      height: 1px;
-      background-color: var(--grey);
       position: absolute;
       left: 0;
       top: 50%;
+      width: 40%;
+      height: 1px;
+      background-color: var(--color-grey);
     }
 
     &::after {
       content: '';
-      width: 40%;
-      height: 1px;
-      background-color: var(--grey);
       position: absolute;
       right: 0;
       top: 50%;
+      width: 40%;
+      height: 1px;
+      background-color: var(--color-grey);
     }
   }
 
   .login_facebook {
+    margin-bottom: var(--space-medium);
     color: #385185;
     font-size: var(--fs-small);
     font-weight: bold;
     letter-spacing: 0.5px;
-    margin-bottom: var(--space-medium);
 
     i {
-      font-size: var(--fs-large);
       margin-right: var(--space-small);
+      font-size: var(--fs-large);
     }
   }
 
