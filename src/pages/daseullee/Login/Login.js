@@ -2,7 +2,6 @@ import React from 'react';
 import InputId from './Components/InputId/InputId';
 import Button from './Components/Button/Button';
 import './Login.scss';
-import '../Style/Common.scss';
 
 class Login extends React.Component {
   constructor() {

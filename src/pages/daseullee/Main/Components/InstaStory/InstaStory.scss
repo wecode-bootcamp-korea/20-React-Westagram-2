@@ -1,15 +1,15 @@
 .instaStory img {
-    width: 56px;
-    height: 56px;
-    margin-bottom: 5px;
-    border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 5px;
+  border-radius: 50%;
 }
 
 .instaStory {
-    display: flex;
-    height: 119px;
-    padding: 16px 0 16px 10px;
-    margin-bottom: 30px;
-    border: var(--border-color) solid 1px;
-    background-color: var(--main-backgroundColor);
+  display: flex;
+  height: 119px;
+  padding: 16px 0 16px 10px;
+  margin-bottom: 30px;
+  border: var(--border-color) solid 1px;
+  background-color: var(--color-white);
 }

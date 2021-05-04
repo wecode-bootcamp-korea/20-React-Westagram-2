@@ -1,47 +1,47 @@
 .main-right {
-    width: 293px;
-    background-color: var(--sub-backgrouondColor);
+  width: 293px;
+  background-color: var(--bg-color);
 }
 
 .myProfile {
-    display: flex;
-    align-items: center;
-    margin-top: 13px;
-    padding-left: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 13px;
+  padding-left: 20px;
 }
 
 .myProfile {
-img {
-    width: 56px ;
+  img {
+    width: 56px;
     height: 56px;
     margin: 10px;
     border-radius: 50%;
-}
+  }
 }
 
 .myProfile_name_id {
-    margin: 0px;
+  margin: 0px;
 }
 
 .myProfile_name_introduce {
-    margin: 0px;
-    color: gray;
+  margin: 0px;
+  color: gray;
 }
 
 .friendRecommend_description {
-    display: flex;
-    position: relative;
-    align-items: center;
-    margin: 20px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin: 20px;
 }
 
 .friendRecommend_description_one {
-    color: gray;
-    font-size: 14px;
+  color: var(--color-grey);
+  font-size: 14px;
 }
 
 .friendRecommend_description_two {
-    position: absolute;
-    right: 10px;
-    font-size: 12px;
+  position: absolute;
+  right: 10px;
+  font-size: 12px;
 }

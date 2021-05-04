@@ -2,7 +2,6 @@ import React from 'react';
 import Nav from './Components/Nav/Nav';
 import MainSection from './Components/MainSection/MainSection';
 import './Main.scss';
-import '../Style/Common.scss';
 
 class Main extends React.Component {
   render() {

@@ -1,19 +1,19 @@
 .friendProfile {
-    display: flex;
-    align-items: center;
-    img {
-        width: 32px;
-        height: 32px;
-        margin: 10px;
-        border-radius: 50%;
-    }
+  display: flex;
+  align-items: center;
+  img {
+    width: 32px;
+    height: 32px;
+    margin: 10px;
+    border-radius: 50%;
+  }
 }
 
 .friendProfile_name_id {
-    margin: 0px;
+  margin: 0px;
 }
 
 .freindProfile_name_description {
-    margin: 0px;
-    color: gray;
+  margin: 0px;
+  color: var(--color-grey);
 }
