@@ -7,8 +7,8 @@ class Login extends React.Component {
     super();
     this.state = {
       disabled: true,
-      idValue: '',
-      pwValue: '',
+      id: '',
+      pw: '',
       btnClassName: '',
     };
   }
@@ -17,45 +17,40 @@ class Login extends React.Component {
     this.props.history.push('/mainyrk');
   };
 
-  handleIdInput = e => {
-    this.setState({ idValue: e.target.value });
-  };
-
-  handlePwInput = e => {
-    this.setState({ pwValue: e.target.value });
+  handleInput = e => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   };
 
   render() {
-    const { idValue, pwValue } = this.state;
+    const { id, pw } = this.state;
     return (
       <main className="loginyrk">
         <h1 className="logoText">Westagram</h1>
         <form className="loginForm" name="login">
           <input
-            onChange={this.handleIdInput}
+            onChange={this.handleInput}
             className="idName loginInput"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
+            name="id"
           />
           <input
-            onChange={this.handlePwInput}
+            onChange={this.handleInput}
             className="pw loginInput"
             type="password"
             placeholder="비밀번호"
+            name="pw"
           />
           <button
-            disabled={
-              idValue.includes('@') && 5 <= pwValue.length ? false : true
-            }
-            className={
-              idValue.includes('@') && 5 <= pwValue.length ? 'activeBtn' : ''
-            }
+            disabled={id.includes('@') && 5 <= pw.length ? false : true}
+            className={id.includes('@') && 5 <= pw.length ? 'activeBtn' : ''}
             onClick={this.goToMain}
           >
             로그인
           </button>
         </form>
-        <Link to="/mainyrk">회원가입</Link>
+        <Link to="/ mainyrk"> 회원 가입 </Link>
         <a href="#">비밀번호를 잊으셨나요?</a>
       </main>
     );

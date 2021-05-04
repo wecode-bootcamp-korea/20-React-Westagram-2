@@ -1,9 +1,13 @@
+.logoText {
+  font-family: 'Lobster', cursive;
+}
+
 .loginyrk {
   width: 350px;
   height: 380px;
   margin: 100px auto 100px auto;
   background: #fff;
-  border: 1px solid lightgrey;
+  border: 1px solid var(--border-color);
 
   .logoText {
     font-size: 38px;
@@ -22,10 +26,10 @@
       height: 42px;
       margin: 0 0 7px 0;
       padding: 9px 8px;
-      border: 1px solid lightgrey;
+      border: 1px solid var(--border-color);
       border-radius: 5px;
-      color: #b1b1b1;
-      background: #fafbfa;
+      color: var(--color-dark-grey);
+      background: var(--bg-color);
       outline: none;
     }
 
@@ -35,13 +39,13 @@
       margin: 30px 0;
       border: 0;
       border-radius: 5px;
-      color: white;
-      font-weight: bold;
-      background: #b2dffc;
+      color: var(--color-white);
+      font-weight: var(--weight-bold);
+      background: var(--inactive-color);
     }
 
     .activeBtn {
-      background: #032952;
+      background: var(--active-color);
     }
   }
 
