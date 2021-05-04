@@ -9,69 +9,65 @@ class CommentList extends React.Component {
     this.state = {
       content: '',
       addComment: [],
-      newComment: [{ id: 0, text: '' }],
+      newComment: [],
     };
   }
 
   componentDidMount() {
     fetch('http://localhost:3000/data/commentData.json')
       .then(res => res.json())
-      .then(data => {
+      .then(feedData => {
         this.setState({
-          addComment: data,
+          addComment: feedData,
         });
       });
   }
 
   handleContent = e => {
-    this.setState({ content: e.target.value });
+    const { value } = e.target;
+    this.setState({ content: value });
   };
 
-  addComment = () => {
+  addComment = e => {
+    e.preventDefault();
+    const { newComment, content } = this.state;
     this.setState({
-      newComment: [
-        ...this.state.newComment,
-        { id: this.state.id + 1, text: this.state.content },
-      ],
+      newComment: [...newComment, { text: content }],
       content: '',
     });
   };
 
   render() {
     const { content, addComment, newComment } = this.state;
+
     return (
       <>
         <div className="commentList">
           {addComment.map(el => {
             return (
-              <Comment key={el.id} name={el.userName} content={el.content} />
+              <Comment
+                key={el.id}
+                name={el.userName}
+                content={el.content}
+                isLiked={el.isLiked}
+              />
             );
           })}
 
-          {newComment.map(el => {
-            return (
-              <AddComment newComment={(newComment, el)} key={newComment.id} />
-            );
+          {newComment.map((el, i) => {
+            return <AddComment key={i} newComment={el} />;
           })}
         </div>
         <section className="addComment">
-          <input
-            onChange={this.handleContent}
-            onKeyPress={e => {
-              if (e.key === 'Enter') {
-                this.addComment();
-              }
-            }}
-            className="textarea"
-            value={content}
-            placeholder="😀댓글 달기..."
-          />
-          <button
-            onClick={this.addComment}
-            className={content ? 'addBtnColor' : 'addBtn'}
-          >
-            게시
-          </button>
+          <form onSubmit={this.addComment}>
+            <input
+              onChange={this.handleContent}
+              className="textarea"
+              value={content}
+              placeholder="😀댓글 달기..."
+            />
+            <button className={content ? 'addBtnColor' : 'addBtn'}>게시</button>
+          </form>
         </section>
       </>
     );

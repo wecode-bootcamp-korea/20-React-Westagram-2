@@ -2,7 +2,7 @@ import React from 'react';
 
 class Comment extends React.Component {
   render() {
-    const { name, content } = this.props;
+    const { name, content, isLiked } = this.props;
     return (
       <>
         <div className="delList">
@@ -13,8 +13,12 @@ class Comment extends React.Component {
               <i class="fas fa-times"></i>
             </span>
           </div>
-          <button>
-            <i class="far fa-heart"></i>
+          <button className={isLiked ? 'isLiked' : ''}>
+            {isLiked ? (
+              <i class="fas fa-heart"></i>
+            ) : (
+              <i class="far fa-heart"></i>
+            )}
           </button>
         </div>
       </>

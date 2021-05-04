@@ -1,6 +1,5 @@
 import React from 'react';
 import Story from './Story/Story';
-import Recommend from './Story/Recommend';
 import StoryBottomNav from './StoryBottomNav/StoryBottomNav';
 import './Aside.scss';
 
@@ -15,7 +14,6 @@ class Aside extends React.Component {
           </p>
         </div>
         <Story />
-        <Recommend />
         <StoryBottomNav />
       </aside>
     );

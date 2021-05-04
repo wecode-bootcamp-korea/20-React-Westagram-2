@@ -15,9 +15,9 @@ class Main extends React.Component {
   componentDidMount() {
     fetch('http://localhost:3000/data/feedData.json')
       .then(res => res.json())
-      .then(data => {
+      .then(feedData => {
         this.setState({
-          feedData: data,
+          feedData: feedData,
         });
       });
   }
@@ -38,6 +38,7 @@ class Main extends React.Component {
                     userImg={el.userImg}
                     feedImgUrl={el.feedImgUrl}
                     feedImgAlt={el.feedImgAlt}
+                    isLiked={el.isLiked}
                   />
                 );
               })}

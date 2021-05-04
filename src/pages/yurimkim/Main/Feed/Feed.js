@@ -5,7 +5,7 @@ import './Feed.scss';
 
 class Feed extends React.Component {
   render() {
-    const { userName, userImg, feedImgUrl, feedImgAlt } = this.props;
+    const { userName, userImg, feedImgUrl, feedImgAlt, isLiked } = this.props;
     return (
       <article className="feed">
         <FeedHeader userName={userName} userImg={userImg} />
@@ -16,8 +16,12 @@ class Feed extends React.Component {
           <section>
             <ul>
               <li>
-                <button>
-                  <i class="far fa-heart"></i>
+                <button className={isLiked ? 'isLiked' : ''}>
+                  {isLiked ? (
+                    <i class="fas fa-heart" />
+                  ) : (
+                    <i class="far fa-heart" />
+                  )}
                 </button>
               </li>
               <li>

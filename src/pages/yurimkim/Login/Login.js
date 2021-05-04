@@ -6,10 +6,8 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      disabled: true,
       id: '',
       pw: '',
-      btnClassName: '',
     };
   }
 
@@ -27,17 +25,17 @@ class Login extends React.Component {
     return (
       <main className="loginyrk">
         <h1 className="logoText">Westagram</h1>
-        <form className="loginForm" name="login">
+        <form className="loginForm">
           <input
             onChange={this.handleInput}
-            className="idName loginInput"
+            className="loginInput"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             name="id"
           />
           <input
             onChange={this.handleInput}
-            className="pw loginInput"
+            className="loginInput"
             type="password"
             placeholder="비밀번호"
             name="pw"

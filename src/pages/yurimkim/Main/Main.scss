@@ -1,14 +1,10 @@
-%flex-start {
-  display: flex;
-}
-
 .mainDiv {
   width: 955px;
   margin: auto;
 }
 
 .mainSection {
-  @extend %flex-start;
+  display: flex;
   justify-content: space-between;
   margin: 160px 0;
 }
