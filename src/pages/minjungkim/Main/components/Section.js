@@ -8,11 +8,12 @@ class Section extends Component {
   };
 
   componentDidMount() {
+    const url = 'http://localhost:3000/data/minjungkim/feedData.json';
     const option = {
       method: 'GET',
     };
 
-    fetch('http://localhost:3000/data/minjungkim/feedData.json', option)
+    fetch(url, option)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -22,14 +23,16 @@ class Section extends Component {
   }
 
   render() {
+    const { feeds } = this.state;
+
     return (
       <section className="section">
-        {this.state.feeds.map(feed => (
+        {feeds.map(feed => (
           <Feed
+            alt={feed.alt}
+            imgUrl={feed.imgUrl}
             key={feed.id}
             text={feed.text}
-            imgUrl={feed.imgUrl}
-            alt={feed.alt}
           />
         ))}
       </section>

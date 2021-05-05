@@ -9,15 +9,20 @@
 }
 
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100vw;
   height: 70px;
   padding: var(--space-large) var(--space-xxl);
   margin-bottom: var(--space-xl);
   background-color: var(--color-white);
   border-bottom: 1px solid var(--border-color);
+
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+  }
 
   &_logo {
     flex: 1;
@@ -90,68 +95,69 @@
       padding-right: var(--space-large);
     }
   }
+  #menu_btn {
+    position: relative;
 
-  .user_icon {
-    padding: 2px;
-    width: 35px;
-    height: 35px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid red;
+    .user {
+      &_icon {
+        padding: 2px;
+        width: 35px;
+        height: 35px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid red;
 
-    &:hover {
-      cursor: pointer;
+        &:hover {
+          cursor: pointer;
 
-      &:active {
-        transform: scale(0.9);
-      }
-    }
-  }
-
-  .user_menu {
-    position: absolute;
-    right: -24px;
-    top: 53px;
-    width: 200px;
-    background-color: var(--color-white);
-    border-radius: 4px;
-    box-shadow: 1px 1px 5px 1px #cecccc;
-    font-size: var(--fs-small);
-    z-index: 2;
-    opacity: 0;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      right: 37px;
-      width: 14px;
-      height: 14px;
-      background-color: var(--color-white);
-
-      border-top: 1px solid var(--border-color);
-      border-left: 1px solid var(--border-color);
-      transform: rotate(45deg);
-    }
-
-    .active {
-      opacity: 1;
-    }
-
-    li {
-      padding: var(--space-medium);
-
-      &:last-child {
-        padding: var(--space-medium) var(--space-xl);
-        border-top: 1px solid var(--border-color);
+          &:active {
+            transform: scale(0.9);
+          }
+        }
       }
 
-      &:hover {
-        background-color: var(--bg-color);
-      }
+      &_menu {
+        position: absolute;
+        right: -27px;
+        top: 52px;
+        width: 200px;
+        background-color: var(--color-white);
+        border-radius: 4px;
+        box-shadow: 1px 1px 5px 1px #cecccc;
+        font-size: var(--fs-small);
+        z-index: 2;
 
-      i {
-        padding: 0 var(--space-medium);
+        &::before {
+          content: '';
+          position: absolute;
+          top: -8px;
+          right: 37px;
+          width: 14px;
+          height: 14px;
+          background-color: var(--color-white);
+
+          border-top: 1px solid var(--border-color);
+          border-left: 1px solid var(--border-color);
+          transform: rotate(45deg);
+        }
+
+        li {
+          padding: var(--space-medium);
+          text-align: center;
+
+          &:last-child {
+            padding: var(--space-medium) var(--space-xl);
+            border-top: 1px solid var(--border-color);
+          }
+
+          &:hover {
+            background-color: var(--bg-color);
+          }
+
+          i {
+            padding-right: var(--space-small);
+          }
+        }
       }
     }
   }
@@ -382,20 +388,20 @@
     margin-left: var(--space-medium);
   }
 }
-.like_btn {
+#like_btn {
   margin-right: var(--space-small);
 
-  .active {
+  &.active {
     color: red;
   }
 }
 
-.posting_btn {
+#posting_btn {
   font-size: var(--fs-medium);
   font-weight: bold;
   color: var(--inactive-color);
 
-  .active {
+  &.active {
     color: var(--active-color);
   }
 }
@@ -436,7 +442,7 @@
   }
 }
 
-.user_name {
+.user_tag {
   color: var(--color-grey);
 }
 
@@ -559,7 +565,7 @@ footer {
     overflow: hidden;
   }
 
-  .posting_btn {
+  #posting_btn {
     font-size: var(--fs-small);
     color: var(--inactive-color);
   }

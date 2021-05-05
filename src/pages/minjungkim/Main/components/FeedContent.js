@@ -5,14 +5,15 @@ import FeedCommentBox from './FeedCommentBox';
 
 class FeedContent extends Component {
   render() {
-    const { src, alt, text, comments } = this.props;
+    const { src, alt, text, comments, onDelete } = this.props;
+
     return (
       <>
         <img className="feed_image" src={src} alt={alt} />
         <div className="feed_contents">
           <FeedIcons />
           <FeedLikes />
-          <FeedCommentBox text={text} comments={comments} />
+          <FeedCommentBox text={text} comments={comments} onDelete={onDelete} />
           <div className="feed_posting_time">42분 전</div>
         </div>
       </>

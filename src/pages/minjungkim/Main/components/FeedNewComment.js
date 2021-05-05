@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-class NewComment extends Component {
+class FeedNewComment extends Component {
   state = {
-    id: 0,
+    id: Date.now(),
     value: '',
   };
 
@@ -13,9 +13,16 @@ class NewComment extends Component {
     });
   };
 
+  isButtonActive = () => {
+    const { value } = this.state;
+    return value && 'active';
+  };
+
   handleSubmitComment = e => {
+    const { value } = this.state;
+
     e.preventDefault();
-    if (this.state) {
+    if (value) {
       this.props.onSubmit(this.state);
     } else {
       alert("Woops, you don't comment anything here!");
@@ -26,22 +33,25 @@ class NewComment extends Component {
   };
 
   render() {
+    const { value } = this.state;
     return (
       <form onSubmit={this.handleSubmitComment} className="feed_new_comment">
         <div className="feed_text">
           <i className="far fa-smile"></i>
           <input
             onChange={this.handleCommentInput}
-            value={this.state.value}
+            value={value}
             className="feed_input"
             type="text"
             placeholder="댓글 달기..."
           />
         </div>
-        <button className="posting_btn">게시</button>
+        <button id="posting_btn" className={this.isButtonActive() && 'active'}>
+          게시
+        </button>
       </form>
     );
   }
 }
 
-export default NewComment;
+export default FeedNewComment;

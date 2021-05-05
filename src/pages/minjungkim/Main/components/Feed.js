@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FeedOwner from './FeedOwner.js';
 import FeedContent from './FeedContent.js';
-import NewComment from './NewComment';
+import FeedNewComment from './FeedNewComment';
 
 export class Feed extends Component {
   state = {
@@ -9,11 +9,12 @@ export class Feed extends Component {
   };
 
   componentDidMount() {
+    const url = 'http://localhost:3000/data/minjungkim/commentData.json';
     const option = {
       method: 'GET',
     };
 
-    fetch('http://localhost:3000/data/minjungkim/commentData.json', option)
+    fetch(url, option)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -28,14 +29,30 @@ export class Feed extends Component {
     });
   };
 
-  render() {
-    const { imgUrl, alt, text } = this.props;
+  handleDeleteComment = id => {
     const { comments } = this.state;
+    const filteredComments = comments.filter(
+      comment => comment.id !== Number(id)
+    );
+    this.setState({
+      comments: filteredComments,
+    });
+  };
+
+  render() {
+    const { imgUrl, text } = this.props;
+    const { comments } = this.state;
+
     return (
       <article className="feed">
         <FeedOwner />
-        <FeedContent comments={comments} src={imgUrl} alt={alt} text={text} />
-        <NewComment onSubmit={this.handleCreateComment} />
+        <FeedContent
+          comments={comments}
+          src={imgUrl}
+          text={text}
+          onDelete={this.handleDeleteComment}
+        />
+        <FeedNewComment onSubmit={this.handleCreateComment} />
       </article>
     );
   }

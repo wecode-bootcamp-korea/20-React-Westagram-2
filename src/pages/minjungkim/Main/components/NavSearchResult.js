@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import NavSearchResultHeader from './NavSearchResultHeader';
-import NavSearchLists from './NavSearchLists';
 
 class NavSearchResult extends Component {
   render() {
     return (
       <div className="nav_search_result">
-        <NavSearchResultHeader />
-        <NavSearchLists />
+        <div className="search_result_header">
+          <span className="search_history">최근 검색 항목</span>
+          <span className="search_history_delete">모두 지우기</span>
+        </div>
+        {/* 결과는 여기? */}
       </div>
     );
   }

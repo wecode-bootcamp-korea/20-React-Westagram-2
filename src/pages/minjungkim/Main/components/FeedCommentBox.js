@@ -4,7 +4,7 @@ import FeedComment from './FeedComment';
 
 export class FeedCommentBox extends Component {
   render() {
-    const { comments, text } = this.props;
+    const { comments, text, onDelete } = this.props;
 
     return (
       <div className="feed_comment_box">
@@ -15,6 +15,8 @@ export class FeedCommentBox extends Component {
               key={comment.id}
               value={comment.value}
               name={comment.name}
+              onDelete={onDelete}
+              id={comment.id}
             />
           ))}
         </ul>
