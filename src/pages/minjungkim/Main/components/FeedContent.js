@@ -5,7 +5,7 @@ import FeedCommentBox from './FeedCommentBox';
 
 class FeedContent extends Component {
   render() {
-    const { src, alt, text, comments, onDelete } = this.props;
+    const { src, alt, text, comments, onDelete, onLike } = this.props;
 
     return (
       <>
@@ -13,7 +13,12 @@ class FeedContent extends Component {
         <div className="feed_contents">
           <FeedIcons />
           <FeedLikes />
-          <FeedCommentBox text={text} comments={comments} onDelete={onDelete} />
+          <FeedCommentBox
+            text={text}
+            comments={comments}
+            onDelete={onDelete}
+            onLike={onLike}
+          />
           <div className="feed_posting_time">42분 전</div>
         </div>
       </>

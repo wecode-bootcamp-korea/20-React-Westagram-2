@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
 
 class FeedComment extends Component {
-  state = {
-    isLike: false,
-  };
-
   static defaultProps = {
     name: '1dookong',
   };
 
   handleLikeBtn = e => {
-    const { isLike } = this.state;
     e.preventDefault();
-    this.setState({ isLike: !isLike });
+    this.props.onLike();
   };
 
   handleDeleteBtn = e => {
@@ -22,8 +17,7 @@ class FeedComment extends Component {
   };
 
   render() {
-    const { value, name, id } = this.props;
-    const { isLike } = this.state;
+    const { value, name, id, isLiked } = this.props;
 
     return (
       <li className="feed_comment_list" data-num={id}>
@@ -35,7 +29,7 @@ class FeedComment extends Component {
           <button
             id="like_btn"
             onClick={this.handleLikeBtn}
-            className={isLike && 'active'}
+            className={isLiked && 'active'}
           >
             <i className="far fa-heart"></i>
           </button>

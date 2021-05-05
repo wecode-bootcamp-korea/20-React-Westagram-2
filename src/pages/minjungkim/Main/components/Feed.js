@@ -39,6 +39,13 @@ export class Feed extends Component {
     });
   };
 
+  handleLikedBtn = () => {
+    const { isLiked } = this.state;
+    this.setState({
+      isLiked: !isLiked,
+    });
+  };
+
   render() {
     const { imgUrl, text } = this.props;
     const { comments } = this.state;
@@ -51,6 +58,7 @@ export class Feed extends Component {
           src={imgUrl}
           text={text}
           onDelete={this.handleDeleteComment}
+          onLike={this.handleLikedBtn}
         />
         <FeedNewComment onSubmit={this.handleCreateComment} />
       </article>
