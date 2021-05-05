@@ -4,6 +4,7 @@ class FeedNewComment extends Component {
   state = {
     id: Date.now(),
     value: '',
+    isLiked: false,
   };
 
   handleCommentInput = e => {

@@ -6,8 +6,9 @@ class FeedComment extends Component {
   };
 
   handleLikeBtn = e => {
+    const { onLike } = this.props;
     e.preventDefault();
-    this.props.onLike();
+    onLike(e.target.closest('li').dataset.num);
   };
 
   handleDeleteBtn = e => {

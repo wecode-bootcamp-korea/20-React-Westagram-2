@@ -39,11 +39,12 @@ export class Feed extends Component {
     });
   };
 
-  handleLikedBtn = () => {
-    const { isLiked } = this.state;
-    this.setState({
-      isLiked: !isLiked,
-    });
+  handleLikedBtn = id => {
+    const { comments } = this.state;
+    const copyComments = [...this.state.comments];
+    const findIndex = comments.findIndex(comment => comment.id === Number(id));
+    copyComments[findIndex].isLiked = !comments[findIndex].isLiked;
+    this.setState({ copyComments });
   };
 
   render() {
