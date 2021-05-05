@@ -12,6 +12,7 @@ class Button extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <button
         className={this.props.changeColor ? 'changeColorBtn' : 'loginBtn'}

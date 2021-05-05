@@ -12,15 +12,11 @@ class Login extends React.Component {
     };
   }
 
-  handleIdInput = e => {
-    this.setState({
-      inputValue: { ...this.state.inputValue, idValue: e.target.value },
-    });
-  };
+  handleInput = e => {
+    const { name, value } = e.target;
 
-  handlePwInput = e => {
     this.setState({
-      inputValue: { ...this.state.inputValue, pwValue: e.target.value },
+      inputValue: { ...this.state.inputValue, [name]: value },
     });
   };
 
@@ -39,15 +35,14 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log(this.state.isButtonOn);
+    console.log(this.state.inputValue);
     return (
       <div className="loginSection">
         <header className="westaLogo">Westagram</header>
         <InputId
-          id={this.state.inputValue.idValue}
-          pw={this.state.inputValue.pwValue}
-          getIdInput={this.handleIdInput}
-          getPwInput={this.handlePwInput}
+          // id={this.state.inputValue.idValue}
+          // pw={this.state.inputValue.pwValue}
+          getInput={this.handleInput}
         />
         <Button changeColor={this.state.isButtonOn} />
         <footer>비밀번호를 잊으셨나요?</footer>

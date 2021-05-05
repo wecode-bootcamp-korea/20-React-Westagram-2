@@ -6,12 +6,41 @@ class Article extends React.Component {
   constructor() {
     super();
     this.state = {
-      comments: '', //input의 값이 들어갈 콘텐츠 지정
       posting: [],
+      comments: '', //input의 값이 들어갈 콘텐츠 지정
       commentIndex: 0,
       //content입력값을 map함수로 쓰기 위한 빈 배열(나중에 posting배열에 content값이 들어간다.)
     };
   }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          posting: data,
+        });
+      });
+  }
+
+  // addComment = e => {
+  //   e.preventDefault();
+  //   const { posting, comments } = this.state;
+  //   this.setState({
+  //     posting: [
+  //       ...posting,
+  //       {
+  //         id: posting.length + 1,
+  //         userName: 'meow_meow',
+  //         content: comments,
+  //         isLiked: true,
+  //       },
+  //     ],
+  //     comments: '', //comments초기화
+  //   });
+  // };
 
   getInputComments = e => {
     this.setState({ comments: e.target.value });
@@ -33,8 +62,9 @@ class Article extends React.Component {
   };
 
   render() {
-    console.log(this.state.comments);
-    console.log(this.state.commentIndex);
+    const { posting, comments } = this.state;
+    // console.log(this.state.comments);
+    // console.log(this.state.commentIndex);
     return (
       <article className="instaPost">
         <header className="instaPost_header">
@@ -76,8 +106,14 @@ class Article extends React.Component {
               <p>주말에 친구들이랑 셀카 한방, 우리 우정 영원히~~~~~!</p>
             </div>
           </div>
-          {this.state.posting.map((text, index) => {
-            return <Comments commentsContent={text} key={index} />;
+          {posting.map((comments, index) => {
+            return (
+              <Comments
+                key={comments.id}
+                name={comments.userName}
+                commentsContent={comments.content}
+              />
+            );
           })}
           <p className="instaPost_time">2시간 전</p>
           <div className="instaPost_commentsBar">
