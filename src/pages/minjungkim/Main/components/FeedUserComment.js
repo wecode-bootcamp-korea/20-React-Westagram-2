@@ -6,8 +6,8 @@ class FeedUserComment extends Component {
 
     return (
       <div className="feed_user_comment">
-        <span className="feeder_id">travellingthroughtheworld</span>
-        <span className="feeder_comment">{comments}</span>
+        <span className="feed_id">travellingthroughtheworld</span>
+        <span className="feed_message">{comments}</span>
       </div>
     );
   }

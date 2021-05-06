@@ -23,7 +23,7 @@ class FeedComment extends Component {
     return (
       <li className="feed_comment_list" data-num={id}>
         <div className="feed_comment">
-          <span className="friend_id">{name}</span>
+          <span className="friend">{name}</span>
           <span className="friend_comment">{value}</span>
         </div>
         <div className="feed_controls">

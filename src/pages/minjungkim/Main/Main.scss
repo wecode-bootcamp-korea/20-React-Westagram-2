@@ -276,12 +276,10 @@
     padding: var(--space-large);
   }
 
-  &_icons {
-    &_row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 24px;
-    }
+  &_icons_row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
 
     i {
       margin-right: var(--space-large);
@@ -324,13 +322,7 @@
     padding: var(--space-large);
     border-top: 1px solid var(--border-color-light);
   }
-  &_comment {
-    max-width: 530px;
-    padding: var(--space-small) 0;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
+
   &_text {
     display: flex;
     align-items: center;
@@ -346,9 +338,7 @@
     width: 100%;
     padding: var(--space-medium) 0;
   }
-}
 
-.feeder {
   &_info {
     display: flex;
     align-items: center;
@@ -367,12 +357,10 @@
   &_comment {
     display: inline-block;
     max-width: 380px;
+    padding: var(--space-small) 0;
     text-overflow: ellipsis;
     white-space: nowrap;
-
-    a {
-      color: #00376b;
-    }
+    overflow: hidden;
   }
 
   &_id {
@@ -382,15 +370,14 @@
 }
 
 .friend {
-  &_id {
-    display: inline-block;
-    font-weight: bold;
-  }
+  display: inline-block;
+  font-weight: bold;
 
   &_comment {
     margin-left: var(--space-medium);
   }
 }
+
 #like_btn {
   margin-right: var(--space-small);
 
@@ -421,6 +408,7 @@
     margin-bottom: var(--space-large);
   }
 }
+
 .user_img {
   width: 56px;
   height: 56px;
@@ -566,12 +554,12 @@ footer {
     &_comment_list {
       font-size: var(--fs-small);
     }
-  }
 
-  .feeder_comment {
-    max-width: 180px;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    &_message {
+      max-width: 180px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
   }
 
   #posting_btn {
