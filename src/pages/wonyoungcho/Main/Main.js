@@ -1,19 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Comment from './Comment';
 import './Main.scss';
 
-class Main extends Component {
-  constructor() {
-    super();
+class Main extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
       newReply: '',
-      replies: [
-        {
-          name: 'wychrischo',
-          text: 'I love going to the Brooklyn Museum.',
-        },
-      ],
+      replies: [],
     };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          replies: data,
+        });
+      });
   }
 
   textChange = event => {
@@ -22,7 +29,7 @@ class Main extends Component {
     });
   };
 
-  add = () => {
+  buttonClick = () => {
     let arry = this.state.replies;
     arry.push({
       name: 'wychrischo',
@@ -37,7 +44,7 @@ class Main extends Component {
 
   pressEnter = event => {
     if (event.key === 'Enter' && this.state.newReply) {
-      this.add();
+      this.buttonClick();
       event.target.value = '';
     }
   };
@@ -137,7 +144,10 @@ class Main extends Component {
                   ></input>
                 </div>
                 <div className="commentsPost">
-                  <button className="commentsPostButton" onClick={this.add}>
+                  <button
+                    className="commentsPostButton"
+                    onClick={this.buttonClick}
+                  >
                     게시
                   </button>
                 </div>

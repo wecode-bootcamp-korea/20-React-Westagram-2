@@ -27,8 +27,6 @@ class Login extends React.Component {
   };
 
   render() {
-    // console.log(this.state.idInputValue);
-    // // console.log(this.state.pwInputValue);
     return (
       <div className="Loginwyc">
         <main className="mainLogin">
