@@ -11,10 +11,7 @@ class Sidebox extends Component {
       method: 'GET',
     };
 
-    fetch(
-      'http://localhost:3000/data/minjungkim/asideFriendsRecommend.json',
-      option
-    )
+    fetch('/data/minjungkim/asideFriendsRecommend.json', option)
       .then(res => res.json())
       .then(data => {
         this.setState({

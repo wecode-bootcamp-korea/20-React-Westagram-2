@@ -8,7 +8,7 @@ class Section extends Component {
   };
 
   componentDidMount() {
-    const url = 'http://localhost:3000/data/minjungkim/feedData.json';
+    const url = '/data/minjungkim/feedData.json';
     const option = {
       method: 'GET',
     };

@@ -8,8 +8,9 @@ class LoginForm extends Component {
   };
 
   handleValueChange = e => {
+    const { name, value } = e.target;
     this.setState({
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
@@ -21,8 +22,26 @@ class LoginForm extends Component {
     return isValidId && isValidPw;
   };
 
-  goToMain = () => {
-    this.props.history.push('/mainmjk');
+  goToMain = e => {
+    e.preventDefault();
+    const url = 'http://10.58.0.184:8000/user/signin';
+    const option = {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.loginId,
+        password: this.state.loginPassword,
+        nickname: '하민정조6',
+        phonenumber: '015-1111-2222',
+      }),
+    };
+    fetch(url, option)
+      .then(res => res.json())
+      .then(data => {
+        if (data.MESSAGE === 'SUCCESS') {
+          localStorage.setItem('token', data.token);
+          this.props.history.push('/mainmjk');
+        }
+      });
   };
 
   render() {

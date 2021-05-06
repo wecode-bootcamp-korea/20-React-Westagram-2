@@ -32,7 +32,11 @@ class FeedComment extends Component {
             onClick={this.handleLikeBtn}
             className={isLiked && 'active'}
           >
-            <i className="far fa-heart"></i>
+            {isLiked ? (
+              <i className="fas fa-heart"></i>
+            ) : (
+              <i className="far fa-heart"></i>
+            )}
           </button>
           <button id="delete_btn" onClick={this.handleDeleteBtn}>
             <i className="far fa-trash-alt"></i>
