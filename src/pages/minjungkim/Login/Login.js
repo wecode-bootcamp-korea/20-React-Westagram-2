@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LoginForm from './components/LoginForm';
+import LoginData from './components/LoginData';
 import './Login.scss';
 
 class Login extends Component {
@@ -8,9 +8,9 @@ class Login extends Component {
       <div className="login_mjk">
         <main className="main">
           <h1 className="logo">Westagram</h1>
-          <div className="login_form">
-            <LoginForm />
-          </div>
+          {/* <div className="login_data"> */}
+          <LoginData />
+          {/* </div> */}
           <div className="login_alternative">또는</div>
           <div className="login_facebook">
             <a href="https://ko-kr.facebook.com/">

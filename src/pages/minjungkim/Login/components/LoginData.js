@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-class LoginForm extends Component {
+class LoginData extends Component {
   state = {
     loginId: '',
     loginPassword: '',
@@ -52,7 +52,7 @@ class LoginForm extends Component {
           onChange={this.handleValueChange}
           type="text"
           className="inputForm"
-          id="user_id"
+          id="id"
           placeholder="전화번호, 사용자 이름 또는 이메일"
           autoComplete="off"
           autoFocus
@@ -80,4 +80,4 @@ class LoginForm extends Component {
   }
 }
 
-export default withRouter(LoginForm);
+export default withRouter(LoginData);
