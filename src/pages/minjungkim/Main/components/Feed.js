@@ -9,7 +9,7 @@ export class Feed extends Component {
   };
 
   componentDidMount() {
-    const url = 'data/minjungkim/commentData.json';
+    const url = '/data/minjungkim/commentData.json';
     const option = {
       method: 'GET',
     };

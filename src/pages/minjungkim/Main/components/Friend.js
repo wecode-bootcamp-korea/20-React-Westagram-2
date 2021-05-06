@@ -11,13 +11,13 @@ class Friend extends Component {
   };
 
   render() {
-    const { imgUrl, user, tag, time } = this.props;
+    const { imgUrl, user, tag } = this.props;
     return (
       <div className="user">
-        <img className="user_img small" src={imgUrl} alt="{this.props.alt" />
+        <img className="user_img small" src={imgUrl} alt={this.props.alt} />
         <div className="user_info">
           <div className="user_id">{user}</div>
-          <div className="user_tag">{time || tag}</div>
+          <div className="user_tag">{tag}</div>
         </div>
       </div>
     );

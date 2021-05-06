@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export class UserMenu extends Component {
   render() {
     return (
-      <ul className="user_menu">
+      <ul className="menuModal">
         <li>
           <i className="far fa-user-circle"></i>
           프로필

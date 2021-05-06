@@ -1,4 +1,5 @@
 .main_mjk {
+  padding-top: 90px;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
@@ -9,6 +10,8 @@
 }
 
 .nav {
+  position: fixed;
+  top: 0;
   width: 100vw;
   height: 70px;
   padding: var(--space-large) var(--space-xxl);
@@ -95,6 +98,7 @@
       padding-right: var(--space-large);
     }
   }
+
   #menu_btn {
     position: relative;
 
@@ -406,12 +410,18 @@
   }
 }
 
-.aside .user {
-  display: flex;
-  align-items: center;
-  margin-bottom: var(--space-large);
-}
+.aside {
+  .wrapper {
+    position: sticky;
+    top: 20px;
+  }
 
+  .user {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-large);
+  }
+}
 .user_img {
   width: 56px;
   height: 56px;
