@@ -6,13 +6,33 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: '',
-      pw: '',
+      email: '',
+      password: '',
     };
   }
 
-  goToMain = () => {
-    this.props.history.push('/mainyrk');
+  goToMain = e => {
+    e.preventDefault();
+    fetch('http://10.58.0.20:8000/user/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result === 'SUCCESS') {
+          this.props.history.push('/mainyrk');
+          // console.log('결과: ', result);
+        }
+      });
+
+    // .then(response => {
+    //   if (response.token) {
+    //     localStorage.setItem('wtw-token', response.token);
+    //   }
+    // });
   };
 
   handleInput = e => {
@@ -21,7 +41,8 @@ class Login extends React.Component {
   };
 
   render() {
-    const { id, pw } = this.state;
+    const { email, password } = this.state;
+    const isValid = email.includes('@') && 5 <= password.length;
     return (
       <main className="loginyrk">
         <h1 className="logoText">Westagram</h1>
@@ -31,18 +52,18 @@ class Login extends React.Component {
             className="loginInput"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
-            name="id"
+            name="email"
           />
           <input
             onChange={this.handleInput}
             className="loginInput"
             type="password"
             placeholder="비밀번호"
-            name="pw"
+            name="password"
           />
           <button
-            disabled={id.includes('@') && 5 <= pw.length ? false : true}
-            className={id.includes('@') && 5 <= pw.length ? 'activeBtn' : ''}
+            disabled={isValid ? false : true}
+            className={isValid ? 'activeBtn' : ''}
             onClick={this.goToMain}
           >
             로그인

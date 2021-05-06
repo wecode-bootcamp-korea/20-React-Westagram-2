@@ -4,7 +4,21 @@ import ProfilePage from './ProfilePage/ProfilePage';
 import './Nav.scss';
 
 class Nav extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      ProfilePage: true,
+    };
+  }
+
+  handleProfilePage = () => {
+    this.setState = {
+      ProfilePage: !this.state.ProfilePage,
+    };
+  };
+
   render() {
+    console.log(this.state.ProfilePage);
     return (
       <nav className="nav">
         <div className="maxWidth">
@@ -29,14 +43,14 @@ class Nav extends React.Component {
                 <i class="far fa-heart"></i>
               </a>
             </li>
-            <li className="profileImage">
+            <li onClick={this.handleProfilePage} className="profileImage">
               <a href="#">
                 <img alt="profileImage" src="/images/yurimkim/profile.jpg" />
               </a>
             </li>
           </ul>
         </div>
-        <ProfilePage />
+        <ProfilePage handleProfilePage={this.state.ProfilePage} />
       </nav>
     );
   }

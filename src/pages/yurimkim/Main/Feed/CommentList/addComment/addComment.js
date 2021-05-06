@@ -1,23 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class AddComment extends Component {
+class AddComment extends React.Component {
   render() {
-    const { newComment } = this.props;
+    const { name, content, isLiked } = this.props;
     return (
-      <div className="delList">
-        <div>
-          <span>yurim4545</span>
-          {newComment.text}
-          <span class="delBtn">
-            <i class="fas fa-times"></i>
-          </span>
+      <>
+        <div className="delList">
+          <div>
+            <span>{name}</span>
+            {content}
+            <span class="delBtn">
+              <i class="fas fa-times"></i>
+            </span>
+          </div>
+          <button className={isLiked && 'isLiked'}>
+            {isLiked ? (
+              <i class="fas fa-heart"></i>
+            ) : (
+              <i class="far fa-heart"></i>
+            )}
+          </button>
         </div>
-        <button>
-          <i class="far fa-heart"></i>
-        </button>
-      </div>
+      </>
     );
   }
 }
+
+AddComment.defaultProps = {
+  name: 'yurim4545',
+};
 
 export default AddComment;
