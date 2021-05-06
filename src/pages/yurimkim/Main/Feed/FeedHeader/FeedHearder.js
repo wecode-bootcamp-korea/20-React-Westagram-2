@@ -7,7 +7,6 @@ class FeedHeader extends React.Component {
     return (
       <header className="feedHeader">
         <img src={userImg} alt="wecode" />
-
         <div>
           <a href="#">{userName}</a>
           <a href="#">
