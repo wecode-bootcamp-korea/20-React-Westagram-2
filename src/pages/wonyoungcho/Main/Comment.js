@@ -5,7 +5,7 @@ class Comment extends React.Component {
   render() {
     return (
       <div className="postUser">
-        {this.props.commentList.map(event => (
+        {this.props.replies.map(event => (
           <li>
             <a className="newComment" href="/#">
               {event.name}{' '}

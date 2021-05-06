@@ -1,19 +1,17 @@
-{
-  "data": [
-    {
-      "id": 1,
-      "name": "wecode",
-      "text": "We want to launch a bootcamp in Brooklyn."
-    },
-    {
-      "id": 2,
-      "name": "chachacha",
-      "text": "I wanna go for a walk!"
-    },
-    {
-      "id": 3,
-      "name": "wecode20",
-      "text": "We want to start the first project!"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "wecode",
+    "text": "We want to launch a bootcamp in Brooklyn."
+  },
+  {
+    "id": 2,
+    "name": "chachacha",
+    "text": "I wanna go for a walk!"
+  },
+  {
+    "id": 3,
+    "name": "wecode20",
+    "text": "We want to start the first project!"
+  }
+]

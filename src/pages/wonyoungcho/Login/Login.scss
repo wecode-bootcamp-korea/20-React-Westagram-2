@@ -42,7 +42,7 @@ body {
     border: var(--border-color-light);
     border-radius: 2px;
     background-color: var(--color-light-grey);
-    color: var(--border-color);
+    color: var(--color-black);
   }
 
   button {
@@ -57,12 +57,8 @@ body {
     font-weight: bold;
   }
 
-  .changeButtonColor {
+  .active {
     background-color: var(--active-color);
-  }
-
-  .normalButtonColor {
-    background-color: var(--inactive-color);
   }
 }
 

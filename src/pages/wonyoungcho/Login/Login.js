@@ -14,16 +14,45 @@ class Login extends React.Component {
     };
   }
 
-  handleIdInput = event => {
+  loginClick = () => {
+    console.log(this.state.idInputValue);
+    fetch('http://10.58.7.181:8000/user/login', {
+      method: 'POST',
+      headers: {
+        Authorization: localStorage.getItem('access_token'),
+      },
+      body: JSON.stringify({
+        email: this.state.idInputValue,
+        password: this.state.pwInputValue,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        alert(result.message);
+        if (result.message === 'SUCCESS') {
+          this.props.history.push('/Mainwyc');
+        }
+        localStorage.setItem('access-token', result.ACCESS_TOKEN);
+      });
+  };
+
+  handleInput = event => {
+    const { value, name } = event.target;
     this.setState({
-      idInputValue: event.target.value,
+      [name]: value,
     });
   };
 
-  handlePwInput = event => {
-    this.setState({
-      pwInputValue: event.target.value,
-    });
+  checkValidation = () => {
+    const regexr = /^\d{3}[. -]?\d{3,4}[. -]?\d{4}$|[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.]+|[a-zA-Z ]+/;
+    if (
+      regexr.test(this.state.idInputValue) &&
+      this.state.pwInputValue.length > 5
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   render() {
@@ -39,28 +68,18 @@ class Login extends React.Component {
                 className="loginName"
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
-                onChange={this.handleIdInput}
+                onChange={this.handleInput}
               />
               <input
                 className="loginPassword"
                 type="password"
                 placeholder="비밀번호"
-                onChange={this.handlePwInput}
+                onChange={this.handleInput}
               />
               <button
-                className={
-                  this.state.idInputValue.indexOf('@') !== -1 &&
-                  this.state.pwInputValue.length >= 5
-                    ? 'changeButtonColor'
-                    : 'normalButtonColor'
-                }
-                disabled={
-                  this.state.idInputValue.indexOf('@') !== -1 &&
-                  this.state.pwInputValue.length >= 5
-                    ? false
-                    : true
-                }
-                onClick={this.goToMain}
+                className={this.checkValidation() && 'active'}
+                disabled={!this.checkValidation}
+                onClick={this.loginClick}
                 type="button"
               >
                 로그인

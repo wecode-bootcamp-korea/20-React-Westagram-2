@@ -3,8 +3,8 @@ import Comment from './Comment';
 import './Main.scss';
 
 class Main extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       newReply: '',
       replies: [],
@@ -12,9 +12,7 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/commentData.json', {
-      method: 'GET',
-    })
+    fetch('/data/commentData.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -31,7 +29,7 @@ class Main extends React.Component {
 
   buttonClick = () => {
     let arry = this.state.replies;
-    arry.push({
+    arry = arry.concat({
       name: 'wychrischo',
       text: this.state.newReply,
     });
@@ -43,13 +41,14 @@ class Main extends React.Component {
   };
 
   pressEnter = event => {
-    if (event.key === 'Enter' && this.state.newReply) {
+    if (event.key === 'Enter') {
       this.buttonClick();
       event.target.value = '';
     }
   };
 
   render() {
+    const { newReply } = this.state;
     return (
       <div className="Mainwyc">
         <nav className="navBar">
@@ -124,7 +123,7 @@ class Main extends React.Component {
                   </span>
                 </div>
                 <div className="commentBox">
-                  <Comment commentList={this.state.replies} />
+                  <Comment replies={this.state.replies} />
                 </div>
               </div>
               <div className="postTime">
@@ -140,7 +139,7 @@ class Main extends React.Component {
                     placeholder="댓글 달기..."
                     onChange={this.textChange}
                     onKeyPress={this.pressEnter}
-                    value={this.state.newreply}
+                    value={newReply}
                   ></input>
                 </div>
                 <div className="commentsPost">
