@@ -8,4 +8,9 @@
   "javascript.format.enable": false,
   "eslint.alwaysShowStatus": true,
   "files.autoSave": "onFocusChange"
+
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#F53363",
+    "titleBar.inactiveBackground": "#F53363"
+  }
 }

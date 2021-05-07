@@ -1,0 +1,80 @@
+.searchBar {
+  position: absolute;
+  top: 35px;
+  left: 335px;
+  width: 375px;
+  height: 362px;
+  display: none;
+  color: var(--color-dark-grey);
+  background: #fff;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 5px 1px rgba(var(--jb7, 0, 0, 0), 0.0975);
+  overflow-y: auto;
+  z-index: 1;
+
+  .searchTitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px;
+
+    p {
+      font-size: 18px;
+    }
+
+    button {
+      color: var(--active-color);
+      font-size: 16px;
+      font-weight: var(--weight-bold);
+    }
+  }
+
+  .searchListView {
+    .searchListLi {
+      a {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        padding: 0 16px;
+        font-size: 14px;
+
+        img {
+          width: 44px;
+          border-radius: 50%;
+        }
+
+        div {
+          display: flex;
+          padding: 8px 16px;
+          width: 100%;
+
+          div {
+            flex-direction: column;
+            p:first-child {
+              color: var(--color-dark-grey);
+              font-weight: var(--weight-bold);
+            }
+          }
+
+          button {
+            font-size: 24px;
+            font-weight: 100;
+          }
+        }
+
+        span {
+          display: flex;
+          align-items: center;
+          color: var(--color-dark-grey);
+        }
+      }
+    }
+    &:hover {
+      background: var(--color-back);
+      overflow: hidden;
+    }
+  }
+  &:focus {
+    display: block;
+  }
+}

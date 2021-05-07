@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "userName": "wecode",
+    "userImg": "https://lh3.googleusercontent.com/-XWM9cNsljO0/AAAAAAAAAAI/AAAAAAAAAAA/zpXpN3Jy8D4/s44-p-k-no-ns-nd/photo.jpg",
+    "feedImgUrl": "https://miro.medium.com/max/1400/1*eN3s_w5hN28I2uId0k4jIQ.jpeg",
+    "feedImgAlt": "wecode20",
+    "isLiked": true
+  },
+  {
+    "id": 2,
+    "userName": "TAEHYUNG",
+    "userImg": "https://i1.sndcdn.com/artworks-000559826775-hpbjys-t500x500.jpg",
+    "feedImgUrl": "https://i.pinimg.com/originals/e6/2b/3c/e62b3c132dbeef446ab42bc012b4dd0e.jpg",
+    "feedImgAlt": "TAEHYUNG instagram",
+    "isLiked": true
+  },
+  {
+    "id": 3,
+    "userName": "bts_v",
+    "userImg": "https://cdn0-production-images-kly.akamaized.net/pJNo_YfOX5WVTKcMOF7HodvAMJY=/640x640/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3040185/original/011509800_1580742695-V_BTS.JPG",
+    "feedImgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8z1i5SG2GKr8S4xs6Sc3tNF1tqy4v7NJ910Qcc-9--MVJ9PUwRLdHe9Q_cwCQ5DMHLYM&usqp=CAU",
+    "feedImgAlt": "bts_v instagram",
+    "isLiked": false
+  }
+]

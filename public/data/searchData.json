@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "userName": "wecode",
+    "content": "wecode_bootcamp!",
+    "Ahref": "#",
+    "imgAlt": "wecode",
+    "imgUrl": "https://media.vlpt.us/images/inyong_pang/post/f0ea605d-c2d9-460c-aedc-a0ec77e6759f/wecode.png"
+  },
+  {
+    "id": 2,
+    "userName": "bts",
+    "content": "BTS world",
+    "Ahref": "#",
+    "imgAlt": "bts",
+    "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/BTS_logo_%282017%29.png"
+  },
+  {
+    "id": 3,
+    "userName": "wecode_20기",
+    "content": "wecode_bootcamp!",
+    "Ahref": "#",
+    "imgAlt": "wecode_20기",
+    "imgUrl": "https://media.vlpt.us/images/inyong_pang/post/f0ea605d-c2d9-460c-aedc-a0ec77e6759f/wecode.png"
+  },
+  {
+    "id": 4,
+    "userName": "bts_v",
+    "content": "BTS world",
+    "Ahref": "#",
+    "imgAlt": "wecode",
+    "imgUrl": "https://pbs.twimg.com/profile_images/1366340151593598981/40pAB8c8_400x400.jpg"
+  },
+  {
+    "id": 5,
+    "userName": "bts_jimin",
+    "content": "BTS world",
+    "Ahref": "#",
+    "imgAlt": "bts_jimin",
+    "imgUrl": "https://i.mydramalist.com/ZPbkL_5f.jpg"
+  },
+  {
+    "id": 6,
+    "userName": "wecoder_yurim",
+    "content": "wecode_bootcamp!",
+    "Ahref": "#",
+    "imgAlt": "wecoder",
+    "imgUrl": "https://media.vlpt.us/images/inyong_pang/post/f0ea605d-c2d9-460c-aedc-a0ec77e6759f/wecode.png"
+  }
+]

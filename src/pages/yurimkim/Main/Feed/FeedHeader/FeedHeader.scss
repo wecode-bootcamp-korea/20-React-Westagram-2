@@ -1,0 +1,24 @@
+.feedHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  padding: 16px;
+
+  img {
+    width: 32px;
+    margin-left: 15px;
+    border-radius: 50%;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    a:first-child {
+      margin-left: 14px;
+    }
+  }
+}

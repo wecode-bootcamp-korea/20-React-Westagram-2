@@ -1,0 +1,71 @@
+.commentList {
+  .delList {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    padding: 4px 12px;
+
+    div {
+      width: 100%;
+
+      span {
+        font-weight: var(--weight-bold);
+      }
+
+      .delBtn {
+        padding: 0 8px;
+        color: var(--color-light-grey);
+        cursor: pointer;
+        &:hover {
+          color: var(--color-dark-grey);
+        }
+      }
+    }
+
+    button {
+      text-align: right;
+    }
+
+    .isLiked {
+      color: red;
+    }
+  }
+}
+
+.addComment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8px;
+  border-top: 1px solid var(--border-color);
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .textarea {
+    width: 90%;
+    height: 18px;
+    resize: none;
+    overflow: hidden;
+  }
+
+  .addBtn {
+    color: var(--inactive-color);
+    font-weight: var(--weight-bold);
+    text-align: right;
+  }
+
+  .addBtnReset {
+    color: var(--inactive-color);
+    font-weight: var(--weight-bold);
+    text-align: right;
+  }
+
+  .addBtnColor {
+    color: var(--active-color);
+    font-weight: var(--weight-bold);
+  }
+}
