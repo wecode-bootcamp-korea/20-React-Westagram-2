@@ -7,18 +7,48 @@ class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
-      ProfilePage: true,
+      searchValue: '',
+      showPage: false,
+      searchData: [],
+      searchPage: false,
     };
   }
 
-  handleProfilePage = () => {
-    this.setState = {
-      ProfilePage: !this.state.ProfilePage,
-    };
+  componentDidMount() {
+    fetch('/data/searchData.json')
+      .then(res => res.json())
+      .then(searchData => {
+        this.setState({
+          searchData: searchData,
+        });
+      });
+  }
+
+  getSearchValue = e => {
+    const { value } = e.target;
+    const { searchData } = this.state;
+    const filterName = value =>
+      searchData.filter(el => el.userName.includes(value));
+    const result = filterName(value);
+    this.setState({
+      searchData: result,
+    });
+  };
+
+  handleShowPage = () => {
+    this.setState({
+      showPage: !this.state.showPage,
+    });
+  };
+
+  handleSearchPage = () => {
+    this.setState({
+      searchPage: !this.state.searchPage,
+    });
   };
 
   render() {
-    console.log(this.state.ProfilePage);
+    const { searchData, showPage, searchPage } = this.state;
     return (
       <nav className="nav">
         <div className="maxWidth">
@@ -29,9 +59,15 @@ class Nav extends React.Component {
           </div>
           <div className="bar">
             <i class="searchIcon fas fa-search"></i>
-            <input className="search" type="text" placeholder="검색" />
+            <input
+              onClick={this.handleSearchPage}
+              onChange={this.getSearchValue}
+              className="search"
+              type="text"
+              placeholder="검색"
+            />
           </div>
-          <SearchBar />
+          <SearchBar searchData={searchData} searchPage={searchPage} />
           <ul className="navList">
             <li>
               <a href="#">
@@ -43,14 +79,14 @@ class Nav extends React.Component {
                 <i class="far fa-heart"></i>
               </a>
             </li>
-            <li onClick={this.handleProfilePage} className="profileImage">
+            <li onClick={this.handleShowPage} className="profileImage">
               <a href="#">
                 <img alt="profileImage" src="/images/yurimkim/profile.jpg" />
               </a>
             </li>
           </ul>
         </div>
-        <ProfilePage handleProfilePage={this.state.ProfilePage} />
+        <ProfilePage handleShowPage={showPage} />
       </nav>
     );
   }

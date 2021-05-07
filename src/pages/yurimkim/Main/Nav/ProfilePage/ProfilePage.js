@@ -2,15 +2,18 @@ import React from 'react';
 import './ProfilePage.scss';
 
 export const PAGEINFO = [
-  { id: 1, icon: '< class="far fa-user" />', content: '프로필' },
-  { id: 2, icon: '< class="far fa-bookmark" />', content: '저장됨' },
-  { id: 3, icon: '< class="fas fa-cog" />', content: '설정' },
+  { id: 1, icon: <i class="far fa-user" />, content: '프로필' },
+  { id: 2, icon: <i class="far fa-bookmark" />, content: '저장됨' },
+  { id: 3, icon: <i class="fas fa-cog" />, content: '설정' },
 ];
 
 class ProfilePage extends React.Component {
   render() {
     return (
-      <div className="profilePage">
+      <div
+        className="profilePage"
+        style={{ display: this.props.handleShowPage && 'block' }}
+      >
         <ul>
           {PAGEINFO.map(el => {
             return (
