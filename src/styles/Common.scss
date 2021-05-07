@@ -1,0 +1,53 @@
+:root {
+  --color-light-grey: #dbdbdb; //lightgrey
+  --color-grey: #c7c7c7; //grey
+  --color-dark-grey: #747272; //dark grey
+  --bg-color: #fafafa; //bg
+  --color-white: #ffffff;
+  --color-black: #221f1f;
+  --border-color: #dbdbdb; //border
+  --border-color-light: #f1eded; //border light
+  --active-color: #0195f7; // active
+  --inactive-color: #b2dffc; //inactive
+
+  /* size */
+  --fs-xs: 12px;
+  --fs-small: 14px;
+  --fs-medium: 16px;
+  --fs-large: 18px;
+  --fs-xl: 20px;
+  --fs-xxl: 22px;
+  /* space */
+  --space-small: 5px;
+  --space-medium: 10px;
+  --space-large: 15px;
+  --space-xl: 20px;
+  --space-xxl: 30px;
+  /* font weight*/
+  --weight-bold: 800;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: #262626;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+button,
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
