@@ -1,0 +1,32 @@
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(var(--b3f, 250, 250, 250), 1);
+}
+
+.loginSection {
+  width: 350px;
+  height: 378px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  background-color: var(--color-white);
+
+  header {
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+  }
+
+  footer {
+    margin-top: 60px;
+    font-size: 15px;
+    color: #385185;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,19 @@
+.loginSection button {
+  width: 248px;
+  height: 30px;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+.loginBtn {
+  background-color: var(--inactive-color);
+}
+
+.changeColorBtn {
+  background-color: var(--active-color);
+}
