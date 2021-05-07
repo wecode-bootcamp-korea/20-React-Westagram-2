@@ -65,12 +65,12 @@
     }
 
     &:focus + .fa-search,
-    .active + .fa-search {
+    &.active + .fa-search {
       left: 5%;
     }
 
     &:focus ~ .fa-times-circle,
-    .active ~ .fa-times-circle {
+    &.active ~ .fa-times-circle {
       right: 5%;
       opacity: 1;
     }
@@ -108,48 +108,48 @@
           }
         }
       }
+    }
 
-      &_menu {
+    .menuModal {
+      position: absolute;
+      right: -27px;
+      top: 52px;
+      width: 200px;
+      background-color: var(--color-white);
+      border-radius: 4px;
+      box-shadow: 1px 1px 5px 1px #cecccc;
+      font-size: var(--fs-small);
+      z-index: 10;
+
+      &::before {
+        content: '';
         position: absolute;
-        right: -27px;
-        top: 52px;
-        width: 200px;
+        top: -8px;
+        right: 37px;
+        width: 14px;
+        height: 14px;
         background-color: var(--color-white);
-        border-radius: 4px;
-        box-shadow: 1px 1px 5px 1px #cecccc;
-        font-size: var(--fs-small);
-        z-index: 2;
 
-        &::before {
-          content: '';
-          position: absolute;
-          top: -8px;
-          right: 37px;
-          width: 14px;
-          height: 14px;
-          background-color: var(--color-white);
+        border-top: 1px solid var(--border-color);
+        border-left: 1px solid var(--border-color);
+        transform: rotate(45deg);
+      }
 
+      li {
+        padding: var(--space-medium);
+        text-align: center;
+
+        &:last-child {
+          padding: var(--space-medium) var(--space-xl);
           border-top: 1px solid var(--border-color);
-          border-left: 1px solid var(--border-color);
-          transform: rotate(45deg);
         }
 
-        li {
-          padding: var(--space-medium);
-          text-align: center;
+        &:hover {
+          background-color: var(--bg-color);
+        }
 
-          &:last-child {
-            padding: var(--space-medium) var(--space-xl);
-            border-top: 1px solid var(--border-color);
-          }
-
-          &:hover {
-            background-color: var(--bg-color);
-          }
-
-          i {
-            padding-right: var(--space-small);
-          }
+        i {
+          padding-right: var(--space-small);
         }
       }
     }

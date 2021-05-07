@@ -7,6 +7,7 @@ import './Nav.scss';
 class Nav extends Component {
   state = {
     isClicked: false,
+    keyword: '',
   };
 
   handleActive = e => {
@@ -17,7 +18,21 @@ class Nav extends Component {
     });
   };
 
+  handleSearch = e => {
+    this.setState({
+      keyword: e.target.value,
+    });
+  };
+
+  isSearching = () => {
+    const { keyword } = this.state;
+    console.log(keyword);
+    return keyword && true;
+  };
+
   render() {
+    const { keyword, isSearching } = this.state;
+
     return (
       <nav className="nav">
         <div className="nav_wrapper">
@@ -25,10 +40,16 @@ class Nav extends Component {
             <Link to="/Loginmjk">Westagram</Link>
           </div>
           <form className="nav_search">
-            <input className="nav_input" type="text" placeholder="검색" />
+            <input
+              className={'nav_input' + (isSearching ? 'acitve' : '')}
+              type="text"
+              placeholder="검색"
+              onChange={this.handleSearch}
+              value={keyword}
+            />
             <i className="fas fa-search"></i>
             <i className="fas fa-times-circle"></i>
-            <NavSearchResult />
+            <NavSearchResult keyword={keyword} />
           </form>
           <div className="nav_icons">
             <a href="https://www.instagram.com/1dookong/">
