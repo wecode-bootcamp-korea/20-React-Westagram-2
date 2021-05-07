@@ -11,11 +11,7 @@ export class Feed extends Component {
 
   componentDidMount() {
     const url = '/data/minjungkim/commentData.json';
-    const option = {
-      method: 'GET',
-    };
-
-    fetch(url, option)
+    fetch(url)
       .then(res => res.json())
       .then(data => {
         this.setState({

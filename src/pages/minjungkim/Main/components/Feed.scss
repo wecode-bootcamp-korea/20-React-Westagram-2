@@ -1,3 +1,9 @@
+@mixin flex($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
 .feed {
   display: flex;
   flex-direction: column;
@@ -7,9 +13,7 @@
   border-radius: 4px;
 
   &_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center);
     height: 60px;
     padding: var(--space-large);
   }
@@ -25,8 +29,7 @@
   }
 
   &_icons_row {
-    display: flex;
-    justify-content: space-between;
+    @include flex(space-between, center);
     font-size: 24px;
 
     i {
@@ -47,9 +50,7 @@
   }
 
   &_comment_list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center);
     margin: var(--space-small) 0;
   }
 
@@ -63,17 +64,14 @@
   }
 
   &_new_comment {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center);
     height: 60px;
     padding: var(--space-large);
     border-top: 1px solid var(--border-color-light);
   }
 
   &_text {
-    display: flex;
-    align-items: center;
+    @include flex(flex-start, center);
     width: 90%;
 
     i {
@@ -88,8 +86,7 @@
   }
 
   &_info {
-    display: flex;
-    align-items: center;
+    @include flex(flex-start, center);
   }
 
   &_avatar {

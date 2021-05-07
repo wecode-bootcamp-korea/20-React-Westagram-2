@@ -1,5 +1,10 @@
-.main_container {
+@mixin flex($justify-content, $align-items) {
   display: flex;
-  justify-content: center;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+.main_container {
+  @include flex(center, center);
   margin: 0 auto;
 }

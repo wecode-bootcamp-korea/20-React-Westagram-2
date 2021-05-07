@@ -1,3 +1,9 @@
+@mixin flex($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
 .nav {
   position: fixed;
   top: 0;
@@ -9,9 +15,7 @@
   border-bottom: 1px solid var(--border-color);
 
   &_wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center);
     max-width: 960px;
     margin: 0 auto;
   }
@@ -112,14 +116,12 @@
       }
 
       &_result {
-        display: flex;
-        justify-content: space-between;
+        @include flex(space-between, center);
         padding-bottom: var(--space-xl);
       }
 
       .header {
-        display: flex;
-        justify-content: space-between;
+        @include flex(space-between, center);
         padding-bottom: var(--space-large);
 
         .search_history {
@@ -135,9 +137,7 @@
 
       &_lists {
         .user {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          @include flex(space-between, center);
           padding-bottom: var(--space-medium);
 
           .user_wrapper {
@@ -185,9 +185,7 @@
   }
 
   &_icons {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    @include flex(flex-end, center);
     flex: 1;
     font-size: 24px;
 
