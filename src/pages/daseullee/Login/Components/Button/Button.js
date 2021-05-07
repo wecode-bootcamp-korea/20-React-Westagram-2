@@ -1,22 +1,33 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import './Button.scss';
-
-// 로그인 버튼 활성화
-// 조건 : ID는 @포함, Pw는 5글자 이상시 활성화
-// 삼항연산자 사용
 
 class Button extends React.Component {
   goToMain = () => {
-    this.props.history.push('/maindsl');
+    const { idValue, pwValue } = this.props;
+    fetch('http://10.58.1.59:8000/user/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: idValue,
+        password: pwValue,
+        // name: '신승호',
+        // nick_name: '신승호',
+        // phone_number: '123456789',
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        result.message === 'SUCCESS'
+          ? this.props.history.push('/maindsl')
+          : alert('회원가입 실패');
+      });
   };
 
   render() {
-    console.log(this.props);
     return (
       <button
         className={this.props.changeColor ? 'changeColorBtn' : 'loginBtn'}
-        onClick={this.goToMain}
+        onClick={this.goToMain} //여기서 fetch함수 실행
       >
         로그인
       </button>
@@ -24,4 +35,4 @@ class Button extends React.Component {
   }
 }
 
-export default withRouter(Button);
+export default Button;

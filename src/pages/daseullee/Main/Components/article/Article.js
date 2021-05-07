@@ -63,8 +63,6 @@ class Article extends React.Component {
 
   render() {
     const { posting, comments } = this.state;
-    // console.log(this.state.comments);
-    // console.log(this.state.commentIndex);
     return (
       <article className="instaPost">
         <header className="instaPost_header">

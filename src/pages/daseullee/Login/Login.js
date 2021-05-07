@@ -14,17 +14,17 @@ class Login extends React.Component {
 
   handleInput = e => {
     const { name, value } = e.target;
-
     this.setState({
       inputValue: { ...this.state.inputValue, [name]: value },
     });
   };
 
   handleAbleButton = () => {
+    const { buttonOn } = this.state;
     this.setState({
       isButtonOn:
-        this.state.inputValue.idValue.includes('@') &&
-        this.state.inputValue.pwValue.length >= 5, //위조건을 만족시 true리턴
+        buttonOn.inputValue.idValue.includes('@') &&
+        buttonOn.inputValue.pwValue.length >= 8, //위조건을 만족시 true리턴
     });
   };
 
@@ -35,16 +35,16 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log(this.state.inputValue);
+    const { valueState } = this.state;
     return (
       <div className="loginSection">
-        <header className="westaLogo">Westagram</header>
-        <InputId
-          // id={this.state.inputValue.idValue}
-          // pw={this.state.inputValue.pwValue}
-          getInput={this.handleInput}
+        <header>Westagram</header>
+        <InputId getInput={this.handleInput} />
+        <Button
+          idValue={valueState.inputValue.idValue}
+          pwValue={valueState.inputValue.pwValue}
+          changeColor={this.state.isButtonOn}
         />
-        <Button changeColor={this.state.isButtonOn} />
         <footer>비밀번호를 잊으셨나요?</footer>
       </div>
     );
