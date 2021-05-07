@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import Feed from './Feed';
+import './Section.scss';
 
 class Section extends Component {
   state = {

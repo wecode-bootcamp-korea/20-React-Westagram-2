@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavSearchResult from './NavSearchResult';
 import UserMenu from './UserMenu';
 import { Link } from 'react-router-dom';
+import './Nav.scss';
 
 class Nav extends Component {
   state = {

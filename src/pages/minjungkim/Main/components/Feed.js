@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FeedOwner from './FeedOwner.js';
 import FeedContent from './FeedContent.js';
 import FeedNewComment from './FeedNewComment';
+import './Feed.scss';
 
 export class Feed extends Component {
   state = {

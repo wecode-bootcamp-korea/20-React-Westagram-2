@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Sidebox from './Sidebox.js';
+import './Aside.scss';
 
 class Aside extends Component {
   render() {

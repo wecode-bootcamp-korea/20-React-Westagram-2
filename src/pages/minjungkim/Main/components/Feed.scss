@@ -1,0 +1,145 @@
+.feed {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-xxl);
+  background-color: var(--color-white);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: var(--space-large);
+  }
+
+  &_image {
+    width: 620px;
+    height: 620px;
+    object-fit: cover;
+  }
+
+  &_contents {
+    padding: var(--space-large);
+  }
+
+  &_icons_row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+
+    i {
+      margin-right: var(--space-large);
+
+      &:first-child {
+        color: red;
+      }
+    }
+  }
+
+  &_likes {
+    padding: var(--space-medium) 0;
+  }
+
+  &_user_comment {
+    padding: var(--space-small) 0;
+  }
+
+  &_comment_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--space-small) 0;
+  }
+
+  &_controls {
+    font-size: var(--fs-xs);
+  }
+
+  &_posting_time {
+    color: var(--color-grey);
+    font-size: var(--fs-xs);
+  }
+
+  &_new_comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: var(--space-large);
+    border-top: 1px solid var(--border-color-light);
+  }
+
+  &_text {
+    display: flex;
+    align-items: center;
+    width: 90%;
+
+    i {
+      margin-right: var(--space-medium);
+      font-size: var(--fs-xxl);
+    }
+  }
+
+  &_input {
+    width: 100%;
+    padding: var(--space-medium) 0;
+  }
+
+  &_info {
+    display: flex;
+    align-items: center;
+  }
+
+  &_avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    padding: 3px;
+    margin-right: var(--space-large);
+    border-radius: 50%;
+    border: 2px solid red;
+  }
+
+  &_comment {
+    display: inline-block;
+    max-width: 380px;
+    padding: var(--space-small) 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &_id {
+    margin-right: var(--space-medium);
+    font-weight: bold;
+  }
+
+  .friend {
+    display: inline-block;
+    font-weight: bold;
+
+    &_comment {
+      margin-left: var(--space-medium);
+    }
+  }
+
+  #like_btn {
+    margin-right: var(--space-small);
+
+    &.active {
+      color: red;
+    }
+  }
+
+  #posting_btn {
+    font-size: var(--fs-medium);
+    font-weight: bold;
+    color: var(--inactive-color);
+
+    &.active {
+      color: var(--active-color);
+    }
+  }
+}
