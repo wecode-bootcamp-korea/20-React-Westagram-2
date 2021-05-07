@@ -61,7 +61,7 @@ class Nav extends React.Component {
             <i class="searchIcon fas fa-search"></i>
             <input
               onClick={this.handleSearchPage}
-              onChange={this.getSearchValue}
+              onKeyPress={this.getSearchValue}
               className="search"
               type="text"
               placeholder="검색"

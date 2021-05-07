@@ -24,15 +24,8 @@ class Login extends React.Component {
       .then(result => {
         if (result === 'SUCCESS') {
           this.props.history.push('/mainyrk');
-          // console.log('결과: ', result);
         }
       });
-
-    // .then(response => {
-    //   if (response.token) {
-    //     localStorage.setItem('wtw-token', response.token);
-    //   }
-    // });
   };
 
   handleInput = e => {
