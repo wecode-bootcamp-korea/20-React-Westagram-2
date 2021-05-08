@@ -15,9 +15,10 @@ class LoginData extends Component {
   };
 
   checkValidation = () => {
-    const reg = /^\d{3}[. -]?\d{3,4}[. -]?\d{4}$|[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.]+|[a-zA-Z ]+/;
-    const isValidId = reg.test(this.state.loginId);
-    const isValidPw = this.state.loginPassword.length > 5;
+    const { loginId, loginPassword } = this.state;
+    const reg = /^\d{3}[. -]?\d{3,4}[. -]?\d{4}$|[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.]+|^[a-zA-Z ]+$/;
+    const isValidId = reg.test(loginId);
+    const isValidPw = loginPassword.length > 5;
 
     return isValidId && isValidPw;
   };
@@ -34,6 +35,7 @@ class LoginData extends Component {
         phonenumber: '015-1111-2222',
       }),
     };
+
     fetch(url, option)
       .then(res => res.json())
       .then(data => {

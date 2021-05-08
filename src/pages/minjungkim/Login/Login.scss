@@ -95,63 +95,63 @@
         }
       }
     }
+  }
 
-    .login_alternative {
-      position: relative;
-      width: 100%;
-      margin-bottom: var(--space-xxl);
-      color: var(--color-grey);
-      font-size: var(--fs-small);
-      text-align: center;
+  .login_alternative {
+    position: relative;
+    width: 100%;
+    margin-bottom: var(--space-xxl);
+    color: var(--color-grey);
+    font-size: var(--fs-small);
+    text-align: center;
 
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        width: 40%;
-        height: 1px;
-        background-color: var(--color-grey);
-      }
-
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        width: 40%;
-        height: 1px;
-        background-color: var(--color-grey);
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 50%;
-        width: 40%;
-        height: 1px;
-        background-color: var(--color-grey);
-      }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background-color: var(--color-grey);
     }
 
-    .login_facebook {
-      margin-bottom: var(--space-medium);
-      color: #385185;
-      font-size: var(--fs-small);
-      font-weight: bold;
-      letter-spacing: 0.5px;
-
-      i {
-        margin-right: var(--space-small);
-        font-size: var(--fs-large);
-      }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background-color: var(--color-grey);
     }
 
-    .forgot_password {
-      font-size: var(--fs-small);
-      color: #2c5379;
-      text-decoration: none;
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background-color: var(--color-grey);
     }
+  }
+
+  .login_facebook {
+    margin-bottom: var(--space-medium);
+    color: #385185;
+    font-size: var(--fs-small);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    i {
+      margin-right: var(--space-small);
+      font-size: var(--fs-large);
+    }
+  }
+
+  .forgot_password {
+    font-size: var(--fs-small);
+    color: #2c5379;
+    text-decoration: none;
   }
 }
