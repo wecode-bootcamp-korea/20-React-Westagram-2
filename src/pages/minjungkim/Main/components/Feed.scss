@@ -38,6 +38,10 @@
       &:first-child {
         color: red;
       }
+
+      &:last-child {
+        margin: 0;
+      }
     }
   }
 
