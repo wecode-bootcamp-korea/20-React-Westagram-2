@@ -22,12 +22,6 @@ class Nav extends Component {
     this.setState({
       keyword: e.target.value,
     });
-    this.isSearching();
-  };
-
-  isSearching = () => {
-    const { keyword } = this.state;
-    return keyword !== '' && 'active';
   };
 
   render() {
@@ -49,10 +43,7 @@ class Nav extends Component {
             />
             <i className="fas fa-search"></i>
             <i className="fas fa-times-circle"></i>
-            <NavSearchResult
-              keyword={keyword}
-              isSearching={this.isSearching()}
-            />
+            <NavSearchResult keyword={keyword} />
           </form>
           <div className="nav_icons">
             <a href="https://www.instagram.com/1dookong/">

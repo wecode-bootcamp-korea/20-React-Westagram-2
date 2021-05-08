@@ -18,15 +18,14 @@ class NavSearchResult extends Component {
   }
 
   render() {
-    const { keyword, isSearching } = this.props;
+    const { keyword } = this.props;
     const { search } = this.state;
-
     const filteredResult = search.filter(item => {
       return item.userId.toLowerCase().indexOf(keyword.toLowerCase()) > -1;
     });
 
     return (
-      <div className={'search_result' + (isSearching ? ' active' : '')}>
+      <div className="search_result">
         <div className="header">
           <span className="search_history">최근 검색 항목</span>
           <button className="search_history_delete">모두 지우기</button>
