@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "wecode",
+    "value": "Welcome to world best coding bootcamp!",
+    "isLiked": true
+  },
+  {
+    "id": 2,
+    "name": "joonsikyang",
+    "value": "Hi there.",
+    "isLiked": false
+  },
+  {
+    "id": 3,
+    "name": "jayPark",
+    "value": "Hey.",
+    "isLiked": false
+  }
+]

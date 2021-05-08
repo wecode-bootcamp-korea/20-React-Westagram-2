@@ -1,0 +1,98 @@
+.main_mjk {
+  padding-top: 90px;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: inherit;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main_container {
+    flex-direction: column;
+  }
+
+  .section {
+    margin: 0 auto;
+  }
+
+  .aside {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    &_search {
+      display: none;
+    }
+
+    &_icons {
+      font-size: var(--fs-xxl);
+    }
+  }
+
+  .section {
+    width: 420px;
+    margin: 0 auto;
+  }
+
+  .feed {
+    &_contents {
+      padding: var(--space-medium);
+    }
+
+    &_image {
+      width: 420px;
+      height: 420px;
+    }
+
+    &_likes {
+      padding: 7px 0px;
+      font-size: var(--fs-small);
+    }
+
+    &_icons_row {
+      font-size: var(--fs-xxl);
+    }
+
+    &_user_comment {
+      padding: 3px 0px;
+      font-size: var(--fs-small);
+    }
+
+    &_comment {
+      max-width: 360px;
+      padding: var(--space-small) 0;
+    }
+
+    &_new_comment {
+      display: none;
+    }
+
+    &_text {
+      i {
+        margin-right: var(--space-medium);
+        font-size: var(--fs-xl);
+      }
+    }
+
+    &_comment_list {
+      font-size: var(--fs-small);
+    }
+
+    &_message {
+      max-width: 180px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  #posting_btn {
+    font-size: var(--fs-small);
+    color: var(--inactive-color);
+  }
+}
