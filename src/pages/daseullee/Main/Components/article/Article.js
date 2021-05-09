@@ -6,63 +6,46 @@ class Article extends React.Component {
   constructor() {
     super();
     this.state = {
-      posting: [],
-      comments: '', //input의 값이 들어갈 콘텐츠 지정
-      commentIndex: 0,
-      //content입력값을 map함수로 쓰기 위한 빈 배열(나중에 posting배열에 content값이 들어간다.)
+      commentBox: [],
+      comments: '',
     };
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/commentData.json', {
-      method: 'GET',
-    })
+    fetch('data/commentData.json')
       .then(res => res.json())
-      .then(data => {
-        this.setState({
-          posting: data,
-        });
-      });
+      .then(commentBox => this.setState({ commentBox }));
   }
 
-  // addComment = e => {
-  //   e.preventDefault();
-  //   const { posting, comments } = this.state;
-  //   this.setState({
-  //     posting: [
-  //       ...posting,
-  //       {
-  //         id: posting.length + 1,
-  //         userName: 'meow_meow',
-  //         content: comments,
-  //         isLiked: true,
-  //       },
-  //     ],
-  //     comments: '', //comments초기화
-  //   });
-  // };
-
-  getInputComments = e => {
+  //input에 넣을 함수
+  getInputValue = e => {
     this.setState({ comments: e.target.value });
   };
 
-  postingComments = () => {
-    // this.state.posting.push({ text: this.state.comments }); //전개연산자로 쓰기
+  uploadComments = e => {
+    e.preventDefault();
+    const { commentBox, comments } = this.state;
     this.setState({
-      commentIndex: this.state.commentIndex + 1,
-      posting: [...this.state.posting, this.state.comments],
+      commentBox: [
+        ...commentBox,
+        {
+          id: 4,
+          userName: 'da_seul',
+          content: comments,
+        },
+      ],
       comments: '',
     });
   };
 
   enterComments = e => {
     if (e.keyCode === 13) {
-      this.postingComments();
-    }
+      this.uploadComments();
+    } // 현재 실행안됨...
   };
 
   render() {
-    const { posting, comments } = this.state;
+    const { commentBox } = this.state;
     return (
       <article className="instaPost">
         <header className="instaPost_header">
@@ -104,12 +87,12 @@ class Article extends React.Component {
               <p>주말에 친구들이랑 셀카 한방, 우리 우정 영원히~~~~~!</p>
             </div>
           </div>
-          {posting.map((comments, index) => {
+          {commentBox.map(comments => {
             return (
               <Comments
                 key={comments.id}
-                name={comments.userName}
-                commentsContent={comments.content}
+                mockdataName={comments.userName}
+                mockdataComments={comments.content}
               />
             );
           })}
@@ -124,10 +107,10 @@ class Article extends React.Component {
               type="text"
               placeholder="댓글 달기..."
               value={this.state.comments}
-              onChange={this.getInputComments}
+              onChange={this.getInputValue}
               onKeyDown={this.enterComments}
             />
-            <button onClick={this.postingComments} className="submit">
+            <button onClick={this.uploadComments} className="submit">
               게시
             </button>
           </div>

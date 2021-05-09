@@ -1,19 +1,19 @@
 [
   {
     "id": 1,
-    "userName": "meow_meow",
+    "userName": "goyang_e",
     "content": "담에 언제만날래?",
     "isLiked": false
   },
   {
     "id": 2,
-    "userName": "meow_meow_2",
+    "userName": "cutie_bada",
     "content": "야 사진 잘나왔다",
     "isLiked": true
   },
   {
     "id": 3,
-    "userName": "meow_meow_3",
+    "userName": "lovely_naeng",
     "content": "나는 왜 빼고 놀아?",
     "isLiked": true
   }

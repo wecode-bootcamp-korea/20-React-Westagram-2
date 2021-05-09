@@ -8,11 +8,8 @@ class Button extends React.Component {
     fetch('http://10.58.1.59:8000/user/signup', {
       method: 'POST',
       body: JSON.stringify({
-        email: idValue,
+        email: idValue, //백엔드와 통신시 key값이 같이야한다.
         password: pwValue,
-        // name: '신승호',
-        // nick_name: '신승호',
-        // phone_number: '123456789',
       }),
     })
       .then(response => response.json())
