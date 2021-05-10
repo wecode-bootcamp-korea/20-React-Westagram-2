@@ -25,7 +25,7 @@ class Main extends React.Component {
   render() {
     const { feedData } = this.state;
     return (
-      <React.Fragment className="mainyrk">
+      <div className="mainyrk">
         <Nav />
         <div className="mainDiv">
           <section className="mainSection">
@@ -46,7 +46,7 @@ class Main extends React.Component {
             <Aside />
           </section>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

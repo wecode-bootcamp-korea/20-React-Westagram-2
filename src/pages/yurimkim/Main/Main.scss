@@ -1,14 +1,16 @@
-.mainDiv {
-  width: 955px;
-  margin: auto;
-}
+.mainyrk {
+  .mainDiv {
+    width: 955px;
+    margin: auto;
+  }
 
-.mainSection {
-  display: flex;
-  justify-content: space-between;
-  margin: 160px 0;
-}
+  .mainSection {
+    display: flex;
+    justify-content: space-between;
+    margin: 160px 0;
+  }
 
-.logoText {
-  font-family: 'Lobster', cursive;
+  .logoText {
+    font-family: 'Lobster', cursive;
+  }
 }

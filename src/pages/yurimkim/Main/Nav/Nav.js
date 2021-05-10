@@ -25,14 +25,20 @@ class Nav extends React.Component {
   }
 
   getSearchValue = e => {
-    const { value } = e.target;
-    const { searchData } = this.state;
-    const filterName = value =>
-      searchData.filter(el => el.userName.includes(value));
-    const result = filterName(value);
     this.setState({
-      searchData: result,
+      searchValue: e.target.value,
     });
+  };
+
+  handleChange = () => {
+    const { searchData } = this.state;
+    const filterName = searchData.filter(el =>
+      el.userName.toLowerCase().includes(this.state.searchValue.toLowerCase())
+    );
+    this.setState({
+      searchData: filterName,
+    });
+    return;
   };
 
   handleShowPage = () => {
