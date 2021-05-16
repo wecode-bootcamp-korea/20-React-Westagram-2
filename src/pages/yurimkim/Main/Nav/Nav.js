@@ -35,10 +35,10 @@ class Nav extends React.Component {
     const filterName = searchData.filter(el =>
       el.userName.toLowerCase().includes(this.state.searchValue.toLowerCase())
     );
-    this.setState({
-      searchData: filterName,
-    });
-    return;
+    // this.setState({
+    //   searchData: filterName,
+    // });
+    return filterName;
   };
 
   handleShowPage = () => {
@@ -55,6 +55,7 @@ class Nav extends React.Component {
 
   render() {
     const { searchData, showPage, searchPage } = this.state;
+    const result = this.handleChange();
     return (
       <nav className="nav">
         <div className="maxWidth">
@@ -67,13 +68,13 @@ class Nav extends React.Component {
             <i class="searchIcon fas fa-search"></i>
             <input
               onClick={this.handleSearchPage}
-              onKeyPress={this.getSearchValue}
+              onKeyUp={this.getSearchValue}
               className="search"
               type="text"
               placeholder="검색"
             />
           </div>
-          <SearchBar searchData={searchData} searchPage={searchPage} />
+          <SearchBar searchData={result} searchPage={searchPage} />
           <ul className="navList">
             <li>
               <a href="#">
